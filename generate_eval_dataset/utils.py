@@ -24,7 +24,7 @@ from prompts import (
 )
 
 def convert_datetime(obj):
-    if isinstance(obj, (pd.Timestamp, datetime, neo4j.time.DateTime)):
+    if isinstance(obj, (pd.Timestamp, datetime, neo4j.time.DateTime, neo4j.time.Date)):
         return obj.isoformat()
     raise TypeError(f"Object of type {type(obj)} is not JSON serializable")
 

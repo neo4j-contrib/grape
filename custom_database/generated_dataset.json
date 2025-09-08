@@ -1,0 +1,3339 @@
+[
+  {
+    "question": "What's Microsoft Corporation's revenue?",
+    "cypher": "MATCH (o:Organization {name: 'Microsoft Corporation'}) RETURN o.revenue AS company_revenue",
+    "query_type": "Direct Property Access",
+    "complexity": "0-hop",
+    "noise_applied": false,
+    "model": "anthropic-chat",
+    "database": "companies",
+    "validated": true,
+    "result": [
+      {
+        "company_revenue": 198270000000.0
+      }
+    ],
+    "answer": "According to the data, Microsoft Corporation's revenue is $198,270,000,000."
+  },
+  {
+    "question": "How many employees does SAP have?",
+    "cypher": "MATCH (o:Organization {name: 'SAP'}) RETURN o.nbrEmployees AS employee_count",
+    "query_type": "Direct Property Access",
+    "complexity": "0-hop",
+    "noise_applied": false,
+    "model": "anthropic-chat",
+    "database": "companies",
+    "validated": true,
+    "result": [
+      {
+        "employee_count": 111961
+      }
+    ],
+    "answer": "According to the data, SAP has 111,961 employees."
+  },
+  {
+    "question": "Tell me Mircosoft Corporation's motto",
+    "cypher": "MATCH (o:Organization {name: 'Microsoft Corporation'}) RETURN o.motto AS company_motto",
+    "query_type": "Direct Property Access",
+    "complexity": "0-hop",
+    "noise_applied": true,
+    "noise_type": "typo",
+    "model": "anthropic-chat",
+    "database": "companies",
+    "validated": true,
+    "result": [
+      {
+        "company_motto": "We\u2019re on a mission to empower every person and every organization on the planet to achieve more."
+      }
+    ],
+    "answer": "Microsoft Corporation's motto is: \"We're on a mission to empower every person and every organization on the planet to achieve more.\""
+  },
+  {
+    "question": "Is Cloud Sherpas still active?",
+    "cypher": "MATCH (o:Organization {name: 'Cloud Sherpas'}) RETURN o.isDissolved AS is_dissolved",
+    "query_type": "Direct Property Access",
+    "complexity": "0-hop",
+    "noise_applied": false,
+    "model": "anthropic-chat",
+    "database": "companies",
+    "validated": true,
+    "result": [
+      {
+        "is_dissolved": true
+      }
+    ],
+    "answer": "No, Cloud Sherpas is not still active. The query result indicates that the organization is dissolved."
+  },
+  {
+    "question": "What's the revenue of New Energy Group?",
+    "cypher": "MATCH (o:Organization {name: 'New Energy Group'}) RETURN o.revenue AS company_revenue",
+    "query_type": "Direct Property Access",
+    "complexity": "0-hop",
+    "noise_applied": false,
+    "model": "anthropic-chat",
+    "database": "companies",
+    "validated": true,
+    "result": [
+      {
+        "company_revenue": 120000000.0
+      }
+    ],
+    "answer": "The revenue of New Energy Group is $120,000,000."
+  },
+  {
+    "question": "How many folks work at Cloud Sherpas?",
+    "cypher": "MATCH (o:Organization {name: 'Cloud Sherpas'}) RETURN o.nbrEmployees AS employee_count",
+    "query_type": "Direct Property Access",
+    "complexity": "0-hop",
+    "noise_applied": true,
+    "noise_type": "colloquialism",
+    "model": "anthropic-chat",
+    "database": "companies",
+    "validated": true,
+    "result": [
+      {
+        "employee_count": 120
+      }
+    ],
+    "answer": "120 people work at Cloud Sherpas."
+  },
+  {
+    "question": "Is Microsoft Corporation a publicly traded company?",
+    "cypher": "MATCH (o:Organization {name: 'Microsoft Corporation'}) RETURN o.isPublic AS is_public",
+    "query_type": "Direct Property Access",
+    "complexity": "0-hop",
+    "noise_applied": false,
+    "model": "anthropic-chat",
+    "database": "companies",
+    "validated": true,
+    "result": [
+      {
+        "is_public": true
+      }
+    ],
+    "answer": "Yes, Microsoft Corporation is a publicly traded company."
+  },
+  {
+    "question": "Who's the CEO of Accenture?",
+    "cypher": "MATCH (o:Organization {name: 'Accenture'})-[:HAS_CEO]->(p:Person) RETURN p.name AS ceo_name",
+    "query_type": "Single-hop Property Retrieval",
+    "complexity": "1-hop",
+    "noise_applied": false,
+    "model": "anthropic-chat",
+    "database": "companies",
+    "validated": true,
+    "result": [
+      {
+        "ceo_name": "Julie Spellman Sweet"
+      }
+    ],
+    "answer": "Julie Spellman Sweet is the CEO of Accenture."
+  },
+  {
+    "question": "How many subsidiaries does Accenture have?",
+    "cypher": "MATCH (o:Organization {name: 'Accenture'})-[:HAS_SUBSIDIARY]->(s:Organization) RETURN COUNT(s) AS subsidiary_count",
+    "query_type": "Single-hop Aggregation",
+    "complexity": "1-hop",
+    "noise_applied": false,
+    "model": "anthropic-chat",
+    "database": "companies",
+    "validated": true,
+    "result": [
+      {
+        "subsidiary_count": 497
+      }
+    ],
+    "answer": "According to the data, Accenture has 497 subsidiaries."
+  },
+  {
+    "question": "How many investors does Infinite Analytics have?",
+    "cypher": "MATCH (o:Organization {name: 'Infinite Analytics'})-[:HAS_INVESTOR]->(i) RETURN COUNT(i) AS investor_count",
+    "query_type": "Single-hop Aggregation",
+    "complexity": "1-hop",
+    "noise_applied": false,
+    "model": "anthropic-chat",
+    "database": "companies",
+    "validated": true,
+    "result": [
+      {
+        "investor_count": 9
+      }
+    ],
+    "answer": "Infinite Analytics has 9 investors."
+  },
+  {
+    "question": "How many suppliers does IBM have?",
+    "cypher": "MATCH (o:Organization {name: 'IBM'})-[:HAS_SUPPLIER]->(s:Organization) RETURN COUNT(s) AS supplier_count",
+    "query_type": "Single-hop Aggregation",
+    "complexity": "1-hop",
+    "noise_applied": false,
+    "model": "anthropic-chat",
+    "database": "companies",
+    "validated": true,
+    "result": [
+      {
+        "supplier_count": 560
+      }
+    ],
+    "answer": "IBM has 560 suppliers."
+  },
+  {
+    "question": "Which firm acquired Cloud Sherpas?",
+    "cypher": "MATCH (parent:Organization)-[:HAS_SUBSIDIARY]->(o:Organization {name: 'Cloud Sherpas'}) RETURN parent.name AS parent_company",
+    "query_type": "Single-hop Property Retrieval",
+    "complexity": "1-hop",
+    "noise_applied": true,
+    "noise_type": "colloquialism",
+    "model": "anthropic-chat",
+    "database": "companies",
+    "validated": true,
+    "result": [
+      {
+        "parent_company": "Accenture"
+      }
+    ],
+    "answer": "Accenture acquired Cloud Sherpas."
+  },
+  {
+    "question": "How many articles mention New Energy Group?",
+    "cypher": "MATCH (a:Article)-[:MENTIONS]->(o:Organization {name: 'New Energy Group'}) RETURN COUNT(a) AS article_count",
+    "query_type": "Single-hop Aggregation",
+    "complexity": "1-hop",
+    "noise_applied": false,
+    "model": "anthropic-chat",
+    "database": "companies",
+    "validated": true,
+    "result": [
+      {
+        "article_count": 5
+      }
+    ],
+    "answer": "5 articles mention New Energy Group."
+  },
+  {
+    "question": "What country is Topsfield located in?",
+    "cypher": "MATCH (c:City {name: 'Topsfield'})-[:IN_COUNTRY]->(country:Country) RETURN country.name AS country_name",
+    "query_type": "Single-hop Property Retrieval",
+    "complexity": "1-hop",
+    "noise_applied": false,
+    "model": "anthropic-chat",
+    "database": "companies",
+    "validated": true,
+    "result": [
+      {
+        "country_name": "United States of America"
+      }
+    ],
+    "answer": "Topsfield is located in the United States of America."
+  },
+  {
+    "question": "What's the total number of employees in Microsoft's suppliers?",
+    "cypher": "MATCH (o:Organization {name: 'Microsoft Corporation'})-[:HAS_SUPPLIER]->(s:Organization) WHERE s.nbrEmployees IS NOT NULL RETURN SUM(s.nbrEmployees) AS total_employees",
+    "query_type": "Two-hop Aggregation",
+    "complexity": "2-hop",
+    "noise_applied": false,
+    "model": "anthropic-chat",
+    "database": "companies",
+    "validated": true,
+    "result": [
+      {
+        "total_employees": 3616267
+      }
+    ],
+    "answer": "The total number of employees in Microsoft's suppliers is 3,616,267."
+  },
+  {
+    "question": "How many companys does SAP own in the United States?",
+    "cypher": "MATCH (o:Organization {name: 'SAP'})-[:HAS_SUBSIDIARY]->(s:Organization)-[:IN_CITY]->(c:City)-[:IN_COUNTRY]->(country:Country {name: 'United States of America'}) RETURN COUNT(DISTINCT s) AS us_subsidiary_count",
+    "query_type": "Two-hop Aggregation",
+    "complexity": "2-hop",
+    "noise_applied": true,
+    "noise_type": "typo",
+    "model": "anthropic-chat",
+    "database": "companies",
+    "validated": true,
+    "result": [
+      {
+        "us_subsidiary_count": 5
+      }
+    ],
+    "answer": "Based on the query result, SAP owns 5 companies in the United States."
+  },
+  {
+    "question": "What's the name of the biz that owns IBM Research?",
+    "cypher": "MATCH (parent:Organization)-[:HAS_SUBSIDIARY]->(o:Organization {name: 'IBM Research'}) RETURN parent.name AS parent_company",
+    "query_type": "Single-hop Property Retrieval",
+    "complexity": "1-hop",
+    "noise_applied": true,
+    "noise_type": "colloquialism",
+    "model": "anthropic-chat",
+    "database": "companies",
+    "validated": true,
+    "result": [
+      {
+        "parent_company": "IBM"
+      }
+    ],
+    "answer": "IBM owns IBM Research."
+  },
+  {
+    "question": "How many board members does Microsft Corporation have?",
+    "cypher": "MATCH (o:Organization {name: 'Microsoft Corporation'})-[:HAS_BOARD_MEMBER]->(p:Person) RETURN COUNT(p) AS board_member_count",
+    "query_type": "Single-hop Aggregation",
+    "complexity": "1-hop",
+    "noise_applied": true,
+    "noise_type": "typo",
+    "model": "anthropic-chat",
+    "database": "companies",
+    "validated": true,
+    "result": [
+      {
+        "board_member_count": 22
+      }
+    ],
+    "answer": "Microsoft Corporation has 22 board members."
+  },
+  {
+    "question": "What's the average revenue of Oracle's suppliers?",
+    "cypher": "MATCH (o:Organization {name: 'Oracle'})-[:HAS_SUPPLIER]->(s:Organization) WHERE s.revenue IS NOT NULL RETURN AVG(s.revenue) AS average_revenue",
+    "query_type": "Two-hop Aggregation",
+    "complexity": "2-hop",
+    "noise_applied": false,
+    "model": "anthropic-chat",
+    "database": "companies",
+    "validated": true,
+    "result": [
+      {
+        "average_revenue": 22290787846.153847
+      }
+    ],
+    "answer": "Based on the query result, the average revenue of Oracle's suppliers is approximately $22.29 billion."
+  },
+  {
+    "question": "How many subsidiaries does Mircosoft Corporation have through its supplier relationships?",
+    "cypher": "MATCH (m:Organization {name: 'Microsoft Corporation'})-[:HAS_SUPPLIER]->(supplier:Organization)-[:HAS_SUBSIDIARY]->(sub:Organization) RETURN COUNT(DISTINCT sub) AS total_subsidiaries",
+    "query_type": "Aggregation",
+    "complexity": "2-hop",
+    "noise_applied": true,
+    "noise_type": "typo",
+    "model": "anthropic-chat",
+    "database": "companies",
+    "validated": true,
+    "result": [
+      {
+        "total_subsidiaries": 12014
+      }
+    ],
+    "answer": "Based on the query result, Microsoft Corporation has 12,014 subsidiaries through its supplier relationships."
+  },
+  {
+    "question": "What's the total revenue of companies that compete with organizations supplied by IBM?",
+    "cypher": "MATCH (ibm:Organization {name: 'IBM'})-[:HAS_SUPPLIER]->(supplier:Organization)-[:HAS_COMPETITOR]->(competitor:Organization) WHERE competitor.revenue IS NOT NULL RETURN SUM(competitor.revenue) AS total_competitor_revenue",
+    "query_type": "Aggregation",
+    "complexity": "2-hop",
+    "noise_applied": false,
+    "model": "anthropic-chat",
+    "database": "companies",
+    "validated": true,
+    "result": [
+      {
+        "total_competitor_revenue": 10396549958000.0
+      }
+    ],
+    "answer": "The total revenue of companies that compete with organizations supplied by IBM is $10,396,549,958,000."
+  },
+  {
+    "question": "How many folks work at companies that Oracle supplies to?",
+    "cypher": "MATCH (o:Organization {name: 'Oracle'})-[:HAS_SUPPLIER]->(supplied:Organization) WHERE supplied.nbrEmployees IS NOT NULL RETURN SUM(supplied.nbrEmployees) AS total_employees",
+    "query_type": "Aggregation",
+    "complexity": "1-hop",
+    "noise_applied": true,
+    "noise_type": "colloquialism",
+    "model": "anthropic-chat",
+    "database": "companies",
+    "validated": true,
+    "result": [
+      {
+        "total_employees": 301530
+      }
+    ],
+    "answer": "According to the data, 301,530 employees work at companies that Oracle supplies to."
+  },
+  {
+    "question": "What's the highest revenue among subsidiaries of SAP's subsidiaries?",
+    "cypher": "MATCH (sap:Organization {name: 'SAP'})-[:HAS_SUBSIDIARY]->(sub1:Organization)-[:HAS_SUBSIDIARY]->(sub2:Organization) WHERE sub2.revenue IS NOT NULL RETURN MAX(sub2.revenue) AS highest_revenue",
+    "query_type": "Sorting",
+    "complexity": "2-hop",
+    "noise_applied": false,
+    "model": "anthropic-chat",
+    "database": "companies",
+    "validated": true,
+    "result": [
+      {
+        "highest_revenue": 30870000000.0
+      }
+    ],
+    "answer": "The highest revenue among subsidiaries of SAP's subsidiaries is $30,870,000,000."
+  },
+  {
+    "question": "How many different investors does Infinite Analytics have?",
+    "cypher": "MATCH (ia:Organization {name: 'Infinite Analytics'})<-[:HAS_INVESTOR]-(investor) RETURN COUNT(DISTINCT investor) AS total_investors",
+    "query_type": "Aggregation",
+    "complexity": "1-hop",
+    "noise_applied": false,
+    "model": "anthropic-chat",
+    "database": "companies",
+    "validated": true,
+    "result": [
+      {
+        "total_investors": 6
+      }
+    ],
+    "answer": "Infinite Analytics has 6 different investors."
+  },
+  {
+    "question": "What's the average number of employees in companys that are subsidiaries of Accenture?",
+    "cypher": "MATCH (a:Organization {name: 'Accenture'})-[:HAS_SUBSIDIARY]->(sub:Organization) WHERE sub.nbrEmployees IS NOT NULL RETURN AVG(sub.nbrEmployees) AS average_employees",
+    "query_type": "Aggregation",
+    "complexity": "1-hop",
+    "noise_applied": true,
+    "noise_type": "typo",
+    "model": "anthropic-chat",
+    "database": "companies",
+    "validated": true,
+    "result": [
+      {
+        "average_employees": 1373.477611940297
+      }
+    ],
+    "answer": "Based on the query result, the average number of employees in companies that are subsidiaries of Accenture is approximately 1,373 employees."
+  },
+  {
+    "question": "What's the lowest employee count among public companies that have subsidiaries?",
+    "cypher": "MATCH (org:Organization)-[:HAS_SUBSIDIARY]->(sub:Organization) WHERE org.isPublic = true AND org.nbrEmployees IS NOT NULL RETURN MIN(org.nbrEmployees) AS lowest_employee_count",
+    "query_type": "Sorting",
+    "complexity": "1-hop",
+    "noise_applied": false,
+    "model": "anthropic-chat",
+    "database": "companies",
+    "validated": true,
+    "result": [
+      {
+        "lowest_employee_count": 38
+      }
+    ],
+    "answer": "The lowest employee count among public companies with subsidiaries is 38."
+  },
+  {
+    "question": "How many different cities can be reached from Microsft through its supply chain network?",
+    "cypher": "MATCH (m:Organization {name: 'Microsoft Corporation'})-[:HAS_SUPPLIER*1..3]->(org:Organization)-[:IN_CITY]->(city:City) RETURN COUNT(DISTINCT city) AS total_cities",
+    "query_type": "Aggregation",
+    "complexity": "4-hop",
+    "noise_applied": true,
+    "noise_type": "typo",
+    "model": "anthropic-chat",
+    "database": "companies",
+    "validated": true,
+    "result": [
+      {
+        "total_cities": 8258
+      }
+    ],
+    "answer": "Based on the query result, Microsoft can reach 8,258 different cities through its supply chain network."
+  },
+  {
+    "question": "What's the peak number of employees among dissolved companies?",
+    "cypher": "MATCH (org:Organization) WHERE org.isDissolved = true AND org.nbrEmployees IS NOT NULL RETURN MAX(org.nbrEmployees) AS highest_employee_count",
+    "query_type": "Sorting",
+    "complexity": "0-hop",
+    "noise_applied": false,
+    "model": "anthropic-chat",
+    "database": "companies",
+    "validated": true,
+    "result": [
+      {
+        "highest_employee_count": 198545
+      }
+    ],
+    "answer": "The peak number of employees among dissolved companies is 198,545."
+  },
+  {
+    "question": "Find the name of the biz that connects IBM to companies in Seattle through supplier relationships?",
+    "cypher": "MATCH (ibm:Organization {name: 'IBM'})-[:HAS_SUPPLIER]->(connector:Organization)-[:HAS_SUPPLIER]->(org:Organization)-[:IN_CITY]->(city:City {name: 'Seattle'}) RETURN connector.name AS connecting_company LIMIT 1",
+    "query_type": "Property Retrieval",
+    "complexity": "3-hop",
+    "noise_applied": true,
+    "noise_type": "colloquialism",
+    "model": "anthropic-chat",
+    "database": "companies",
+    "validated": true,
+    "result": [
+      {
+        "connecting_company": "Adobe"
+      }
+    ],
+    "answer": "Adobe is the name of the company that connects IBM to companies in Seattle through supplier relationships."
+  },
+  {
+    "question": "What's the title of the most recent article mentioning companies with more than 100000 employees?",
+    "cypher": "MATCH (a:Article)-[:MENTIONS]->(org:Organization) WHERE org.nbrEmployees > 100000 AND a.date IS NOT NULL RETURN a.title AS article_title ORDER BY a.date DESC LIMIT 1",
+    "query_type": "Sorting",
+    "complexity": "1-hop",
+    "noise_applied": false,
+    "model": "anthropic-chat",
+    "database": "companies",
+    "validated": true,
+    "result": [
+      {
+        "article_title": "US injunction temporarily blocks Microsoft\u2019s Activision Blizzard acquisition leading up court battle"
+      }
+    ],
+    "answer": "The most recent article mentioning a company with over 100,000 employees is \"US injunction temporarily blocks Microsoft's Activision Blizzard acquisition leading up court battle\"."
+  },
+  {
+    "question": "I need to know the city where subsidiaries of Oracle's competitors are located?",
+    "cypher": "MATCH (o:Organization {name: 'Oracle'})-[:HAS_COMPETITOR]->(comp:Organization)-[:HAS_SUBSIDIARY]->(sub:Organization)-[:IN_CITY]->(city:City) RETURN city.name AS subsidiary_city LIMIT 1",
+    "query_type": "Property Retrieval",
+    "complexity": "3-hop",
+    "noise_applied": false,
+    "model": "anthropic-chat",
+    "database": "companies",
+    "validated": true,
+    "result": [
+      {
+        "subsidiary_city": "Helmond"
+      }
+    ],
+    "answer": "Based on the query result, one city where a subsidiary of Oracle's competitors is located is Helmond."
+  },
+  {
+    "question": "How many supplier connections exist between Microsoft and companies in the United States?",
+    "cypher": "MATCH path = (m:Organization {name: 'Microsoft Corporation'})-[:HAS_SUPPLIER*1..3]->(org:Organization)-[:IN_CITY]->(city:City)-[:IN_COUNTRY]->(country:Country {name: 'United States of America'}) RETURN COUNT(DISTINCT org) AS us_supplier_count",
+    "query_type": "Existence Verification",
+    "complexity": "5-hop",
+    "noise_applied": false,
+    "model": "anthropic-chat",
+    "database": "companies",
+    "validated": true,
+    "result": [
+      {
+        "us_supplier_count": 2125
+      }
+    ],
+    "answer": "Based on the query result, Microsoft has 2,125 supplier connections with companies located in the United States."
+  },
+  {
+    "question": "Among all the public corps, which one has the most revenue?",
+    "cypher": "MATCH (org:Organization) WHERE org.isPublic = true AND org.revenue IS NOT NULL RETURN org.name AS company_name ORDER BY org.revenue DESC LIMIT 1",
+    "query_type": "Sorting",
+    "complexity": "0-hop",
+    "noise_applied": true,
+    "noise_type": "colloquialism",
+    "model": "anthropic-chat",
+    "database": "companies",
+    "validated": true,
+    "result": [
+      {
+        "company_name": "Microsoft Corporation"
+      }
+    ],
+    "answer": "Based on the query result, Microsoft Corporation has the most revenue among public corporations in the database."
+  },
+  {
+    "question": "How many different industry categories are represented by companies that have IBM as a supplier?",
+    "cypher": "MATCH (ibm:Organization {name: 'IBM'})<-[:HAS_SUPPLIER]-(org:Organization)-[:HAS_CATEGORY]->(cat:IndustryCategory) RETURN COUNT(DISTINCT cat) AS total_categories",
+    "query_type": "Aggregation",
+    "complexity": "2-hop",
+    "noise_applied": false,
+    "model": "anthropic-chat",
+    "database": "companies",
+    "validated": true,
+    "result": [
+      {
+        "total_categories": 78
+      }
+    ],
+    "answer": "78 different industry categories are represented by companies that have IBM as a supplier."
+  },
+  {
+    "question": "What's the summary of the subsidiary that connects SAP to companies in Topsfield?",
+    "cypher": "MATCH (sap:Organization {name: 'SAP'})-[:HAS_SUBSIDIARY]->(sub:Organization)-[:IN_CITY]->(city:City {name: 'Topsfield'}) RETURN sub.summary AS subsidiary_summary",
+    "query_type": "Property Retrieval",
+    "complexity": "2-hop",
+    "noise_applied": false,
+    "model": "anthropic-chat",
+    "database": "companies",
+    "validated": true,
+    "result": [
+      {
+        "subsidiary_summary": "Software company based in Bellevue, Washington, United States and owned by SAP"
+      }
+    ],
+    "answer": "The subsidiary connecting SAP to Topsfield is a software company based in Bellevue, Washington, United States, and is owned by SAP."
+  },
+  {
+    "question": "What's itsbigchase's follower count?",
+    "cypher": "MATCH (s:Stream {name: 'itsbigchase'}) RETURN s.followers AS follower_count",
+    "query_type": "Direct Property Access",
+    "complexity": "0-hop",
+    "noise_applied": false,
+    "model": "anthropic-chat",
+    "database": "twitch",
+    "validated": true,
+    "result": [
+      {
+        "follower_count": 33366
+      }
+    ],
+    "answer": "itsbigchase has 33,366 followers."
+  },
+  {
+    "question": "How many total views does fengrush have?",
+    "cypher": "MATCH (s:Stream {name: 'fengrush'}) RETURN s.total_view_count AS total_views",
+    "query_type": "Direct Property Access",
+    "complexity": "0-hop",
+    "noise_applied": false,
+    "model": "anthropic-chat",
+    "database": "twitch",
+    "validated": true,
+    "result": [
+      {
+        "total_views": 107365515
+      }
+    ],
+    "answer": "Fengrush has a total of 107,365,515 views."
+  },
+  {
+    "question": "What's 9linda's channel description?",
+    "cypher": "MATCH (s:Stream {name: '9linda'}) RETURN s.description AS channel_description",
+    "query_type": "Direct Property Access",
+    "complexity": "0-hop",
+    "noise_applied": false,
+    "model": "anthropic-chat",
+    "database": "twitch",
+    "validated": true,
+    "result": [
+      {
+        "channel_description": "Dasha, 24, Belarus. A beautiful woman."
+      }
+    ],
+    "answer": "Dasha, 24, Belarus. A beautiful woman."
+  },
+  {
+    "question": "Tell me ninja614's Twitch URL",
+    "cypher": "MATCH (s:Stream {name: 'ninja614'}) RETURN s.url AS twitch_url",
+    "query_type": "Direct Property Access",
+    "complexity": "0-hop",
+    "noise_applied": false,
+    "model": "anthropic-chat",
+    "database": "twitch",
+    "validated": true,
+    "result": [
+      {
+        "twitch_url": "https://www.twitch.tv/ninja614"
+      }
+    ],
+    "answer": "The Twitch URL for ninja614 is https://www.twitch.tv/ninja614."
+  },
+  {
+    "question": "How many subs does spiukbs have?",
+    "cypher": "MATCH (s:Stream {name: 'spiukbs'}) RETURN s.followers AS subscriber_count",
+    "query_type": "Direct Property Access",
+    "complexity": "0-hop",
+    "noise_applied": true,
+    "noise_type": "colloquialism",
+    "model": "anthropic-chat",
+    "database": "twitch",
+    "validated": true,
+    "result": [
+      {
+        "subscriber_count": 159814
+      }
+    ],
+    "answer": "spiukbs has 159,814 subscribers."
+  },
+  {
+    "question": "What's the total view count for creightonolsen?",
+    "cypher": "MATCH (s:Stream {name: 'creightonolsen'}) RETURN s.total_view_count AS total_views",
+    "query_type": "Direct Property Access",
+    "complexity": "0-hop",
+    "noise_applied": false,
+    "model": "anthropic-chat",
+    "database": "twitch",
+    "validated": true,
+    "result": [
+      {
+        "total_views": 573613
+      }
+    ],
+    "answer": "The total view count for creightonolsen is 573,613 views."
+  },
+  {
+    "question": "What are cacarov's total channel views?",
+    "cypher": "MATCH (s:Stream {name: 'cacarov'}) RETURN s.total_view_count AS total_channel_views",
+    "query_type": "Direct Property Access",
+    "complexity": "0-hop",
+    "noise_applied": false,
+    "model": "anthropic-chat",
+    "database": "twitch",
+    "validated": true,
+    "result": [
+      {
+        "total_channel_views": 3050171
+      }
+    ],
+    "answer": "cacarov's total channel views are 3,050,171."
+  },
+  {
+    "question": "How many followers does anaseu's stream have?",
+    "cypher": "MATCH (s:Stream {name: 'anaseu'}) RETURN s.followers AS stream_followers",
+    "query_type": "Direct Property Access",
+    "complexity": "0-hop",
+    "noise_applied": false,
+    "model": "anthropic-chat",
+    "database": "twitch",
+    "validated": true,
+    "result": [
+      {
+        "stream_followers": 71726
+      }
+    ],
+    "answer": "Anaseu's stream has 71,726 followers."
+  },
+  {
+    "question": "What game does itsbigchase play?",
+    "cypher": "MATCH (s:Stream {name: 'itsbigchase'})-[:PLAYS]->(g:Game) RETURN g.name AS game_name",
+    "query_type": "Single-hop Property Retrieval",
+    "complexity": "1-hop",
+    "noise_applied": false,
+    "model": "anthropic-chat",
+    "database": "twitch",
+    "validated": true,
+    "result": [
+      {
+        "game_name": "Rust"
+      }
+    ],
+    "answer": "Rust"
+  },
+  {
+    "question": "How many streamers play Rust?",
+    "cypher": "MATCH (s:Stream)-[:PLAYS]->(g:Game {name: 'Rust'}) RETURN COUNT(DISTINCT s) AS streamer_count",
+    "query_type": "Single-hop Aggregation",
+    "complexity": "1-hop",
+    "noise_applied": false,
+    "model": "anthropic-chat",
+    "database": "twitch",
+    "validated": true,
+    "result": [
+      {
+        "streamer_count": 47
+      }
+    ],
+    "answer": "47 streamers play Rust."
+  },
+  {
+    "question": "What language does 9linda stream in?",
+    "cypher": "MATCH (s:Stream {name: '9linda'})-[:HAS_LANGUAGE]->(l:Language) RETURN l.name AS stream_language",
+    "query_type": "Single-hop Property Retrieval",
+    "complexity": "1-hop",
+    "noise_applied": false,
+    "model": "anthropic-chat",
+    "database": "twitch",
+    "validated": true,
+    "result": [
+      {
+        "stream_language": "ru"
+      }
+    ],
+    "answer": "9linda streams in Russian (ru)."
+  },
+  {
+    "question": "How many mods does itsbigchase's channel have?",
+    "cypher": "MATCH (u:User)-[:MODERATOR]->(s:Stream {name: 'itsbigchase'}) RETURN COUNT(u) AS moderator_count",
+    "query_type": "Single-hop Aggregation",
+    "complexity": "1-hop",
+    "noise_applied": true,
+    "noise_type": "colloquialism",
+    "model": "anthropic-chat",
+    "database": "twitch",
+    "validated": true,
+    "result": [
+      {
+        "moderator_count": 9
+      }
+    ],
+    "answer": "itsbigchase's channel has 9 moderators."
+  },
+  {
+    "question": "How many chatters does creightonolsen have?",
+    "cypher": "MATCH (s:Stream {name: 'creightonolsen'})-[:CHATTER]->(u:User) RETURN COUNT(u) AS chatter_count",
+    "query_type": "Single-hop Aggregation",
+    "complexity": "1-hop",
+    "noise_applied": false,
+    "model": "anthropic-chat",
+    "database": "twitch",
+    "validated": true,
+    "result": [
+      {
+        "chatter_count": 0
+      }
+    ],
+    "answer": "Based on the query result, creightonolsen has 0 chatters."
+  },
+  {
+    "question": "How many folks moderate streams that syna moderates?",
+    "cypher": "MATCH (u1:User {name: 'syna'})-[:MODERATOR]->(s:Stream)<-[:MODERATOR]-(u2:User) WHERE u1 <> u2 RETURN COUNT(DISTINCT u2) AS co_moderator_count",
+    "query_type": "Two-hop Aggregation",
+    "complexity": "2-hop",
+    "noise_applied": true,
+    "noise_type": "colloquialism",
+    "model": "anthropic-chat",
+    "database": "twitch",
+    "validated": true,
+    "result": [
+      {
+        "co_moderator_count": 10
+      }
+    ],
+    "answer": "10 folks moderate streams that syna moderates."
+  },
+  {
+    "question": "How many people chat in streams that itsbigchase chats in?",
+    "cypher": "MATCH (s1:Stream {name: 'itsbigchase'})-[:CHATTER]->(s2:Stream)<-[:CHATTER]-(u:User) WHERE s1 <> s2 RETURN COUNT(DISTINCT u) AS shared_chatter_count",
+    "query_type": "Two-hop Aggregation",
+    "complexity": "2-hop",
+    "noise_applied": false,
+    "model": "anthropic-chat",
+    "database": "twitch",
+    "validated": true,
+    "result": [
+      {
+        "shared_chatter_count": 160425
+      }
+    ],
+    "answer": "160,425 people chat in streams that itsbigchase also chats in."
+  },
+  {
+    "question": "What games do streamers who have imcoma as a mod play?",
+    "cypher": "MATCH (u:User {name: 'imcoma'})-[:MODERATOR]->(s:Stream)-[:PLAYS]->(g:Game) RETURN g.name AS moderated_stream_game",
+    "query_type": "Two-hop Property Retrieval",
+    "complexity": "2-hop",
+    "noise_applied": true,
+    "noise_type": "colloquialism",
+    "model": "anthropic-chat",
+    "database": "twitch",
+    "validated": true,
+    "result": [
+      {
+        "moderated_stream_game": "Rust"
+      }
+    ],
+    "answer": "Based on the query result, the streamer(s) that imcoma moderates play Rust."
+  },
+  {
+    "question": "What's the highest view count among streamers playing The Elder Scrolls Online?",
+    "cypher": "MATCH (s:Stream)-[:PLAYS]->(g:Game {name: 'The Elder Scrolls Online'}) WHERE s.total_view_count IS NOT NULL RETURN MAX(s.total_view_count) AS highest_view_count",
+    "query_type": "Two-hop Aggregation",
+    "complexity": "2-hop",
+    "noise_applied": false,
+    "model": "anthropic-chat",
+    "database": "twitch",
+    "validated": true,
+    "result": [
+      {
+        "highest_view_count": 107365515
+      }
+    ],
+    "answer": "The highest view count for a streamer playing The Elder Scrolls Online is 107,365,515 views."
+  },
+  {
+    "question": "How many channels does rubiz mod for?",
+    "cypher": "MATCH (u:User {name: 'rubiz'})-[:MODERATOR]->(s:Stream) RETURN COUNT(s) AS moderated_channel_count",
+    "query_type": "Two-hop Aggregation",
+    "complexity": "2-hop",
+    "noise_applied": true,
+    "noise_type": "colloquialism",
+    "model": "anthropic-chat",
+    "database": "twitch",
+    "validated": true,
+    "result": [
+      {
+        "moderated_channel_count": 1
+      }
+    ],
+    "answer": "Rubiz moderates 1 channel."
+  },
+  {
+    "question": "How many moderators does syna have who also moderate channels that play Rust?",
+    "cypher": "MATCH (s:Stream {name: 'syna'})<-[:MODERATOR]-(mod:User)-[:MODERATOR]->(other:Stream)-[:PLAYS]->(g:Game {name: 'Rust'}) RETURN COUNT(DISTINCT mod) AS total_moderators",
+    "query_type": "Aggregation",
+    "complexity": "3-hop",
+    "noise_applied": false,
+    "model": "anthropic-chat",
+    "database": "twitch",
+    "validated": true,
+    "result": [
+      {
+        "total_moderators": 3
+      }
+    ],
+    "answer": "Based on the query result, syna has 3 moderators who also moderate channels that play Rust."
+  },
+  {
+    "question": "What's the total number of followers across all streams that share moderators with itsbigchse?",
+    "cypher": "MATCH (s1:Stream {name: 'itsbigchase'})<-[:MODERATOR]-(mod:User)-[:MODERATOR]->(s2:Stream) WHERE s1 <> s2 RETURN SUM(s2.followers) AS total_followers",
+    "query_type": "Aggregation",
+    "complexity": "2-hop",
+    "noise_applied": true,
+    "noise_type": "typo",
+    "model": "anthropic-chat",
+    "database": "twitch",
+    "validated": true,
+    "result": [
+      {
+        "total_followers": 1023992636
+      }
+    ],
+    "answer": "The total number of followers across all streams that share moderators with itsbigchse is 1,023,992,636."
+  },
+  {
+    "question": "What's the highest follower count among channels that play The Elder Scrolls Online and belong to the ESO Stream Team?",
+    "cypher": "MATCH (s:Stream)-[:PLAYS]->(g:Game {name: 'The Elder Scrolls Online'}), (s)-[:HAS_TEAM]->(t:Team {name: 'ESO Stream Team'}) WHERE s.followers IS NOT NULL RETURN MAX(s.followers) AS highest_followers",
+    "query_type": "Sorting",
+    "complexity": "2-hop",
+    "noise_applied": false,
+    "model": "anthropic-chat",
+    "database": "twitch",
+    "validated": true,
+    "result": [
+      {
+        "highest_followers": 81137
+      }
+    ],
+    "answer": "The highest follower count among channels that play The Elder Scrolls Online and belong to the ESO Stream Team is 81,137 followers."
+  },
+  {
+    "question": "How many folks moderate streams that broadcast in Russian and play Rust?",
+    "cypher": "MATCH (u:User)-[:MODERATOR]->(s:Stream)-[:HAS_LANGUAGE]->(l:Language {name: 'ru'}), (s)-[:PLAYS]->(g:Game {name: 'Rust'}) RETURN COUNT(DISTINCT u) AS total_moderators",
+    "query_type": "Aggregation",
+    "complexity": "3-hop",
+    "noise_applied": true,
+    "noise_type": "colloquialism",
+    "model": "anthropic-chat",
+    "database": "twitch",
+    "validated": true,
+    "result": [
+      {
+        "total_moderators": 15
+      }
+    ],
+    "answer": "15 folks moderate streams that broadcast in Russian and play Rust."
+  },
+  {
+    "question": "What's the URL of the stream that connects evariss to cacarov through moderation?",
+    "cypher": "MATCH (u:User {name: 'evariss'})-[:MODERATOR]->(s:Stream)-[:MODERATOR]->(target:Stream {name: 'cacarov'}) RETURN s.url AS stream_url LIMIT 1",
+    "query_type": "Property Retrieval",
+    "complexity": "2-hop",
+    "noise_applied": false,
+    "model": "anthropic-chat",
+    "database": "twitch",
+    "validated": true,
+    "result": [
+      {
+        "stream_url": "https://www.twitch.tv/syna"
+      }
+    ],
+    "answer": "The URL of the stream that connects evariss to cacarov through moderation is https://www.twitch.tv/syna."
+  },
+  {
+    "question": "Count the number of channels that have chatters who also chat in fengrsh's stream",
+    "cypher": "MATCH (s1:Stream {name: 'fengrush'})<-[:CHATTER]-(u:User)-[:CHATTER]->(s2:Stream) WHERE s1 <> s2 RETURN COUNT(DISTINCT s2) AS connected_channels",
+    "query_type": "Aggregation",
+    "complexity": "2-hop",
+    "noise_applied": true,
+    "noise_type": "typo",
+    "model": "anthropic-chat",
+    "database": "twitch",
+    "validated": true,
+    "result": [
+      {
+        "connected_channels": 5782
+      }
+    ],
+    "answer": "There are 5,782 distinct channels that have chatters who also chat in fengrsh's stream."
+  },
+  {
+    "question": "What's the lowest total view count among streamers who moderate for channels in the ESO Stream Team?",
+    "cypher": "MATCH (u:User)-[:MODERATOR]->(s:Stream)-[:HAS_TEAM]->(t:Team {name: 'ESO Stream Team'}) WHERE u.total_view_count IS NOT NULL RETURN MIN(u.total_view_count) AS lowest_views",
+    "query_type": "Sorting",
+    "complexity": "2-hop",
+    "noise_applied": false,
+    "model": "anthropic-chat",
+    "database": "twitch",
+    "validated": true,
+    "result": [
+      {
+        "lowest_views": 1594957
+      }
+    ],
+    "answer": "Based on the query result, the lowest total view count among streamers who moderate for channels in the ESO Stream Team is 1,594,957 views."
+  },
+  {
+    "question": "How many different languages are used by streams that share VIPs with 9linda?",
+    "cypher": "MATCH (s1:Stream {name: '9linda'})<-[:VIP]-(v:User)-[:VIP]->(s2:Stream)-[:HAS_LANGUAGE]->(l:Language) RETURN COUNT(DISTINCT l) AS total_languages",
+    "query_type": "Aggregation",
+    "complexity": "3-hop",
+    "noise_applied": false,
+    "model": "anthropic-chat",
+    "database": "twitch",
+    "validated": true,
+    "result": [
+      {
+        "total_languages": 0
+      }
+    ],
+    "answer": "The query result shows 0 distinct languages used by streams that share VIPs with 9linda."
+  },
+  {
+    "question": "What's the team name associated with streamers who play games also played by itsbigchase?",
+    "cypher": "MATCH (s1:Stream {name: 'itsbigchase'})-[:PLAYS]->(g:Game)<-[:PLAYS]-(s2:Stream)-[:HAS_TEAM]->(t:Team) RETURN t.name AS team_name LIMIT 1",
+    "query_type": "Property Retrieval",
+    "complexity": "3-hop",
+    "noise_applied": false,
+    "model": "anthropic-chat",
+    "database": "twitch",
+    "validated": true,
+    "result": [
+      {
+        "team_name": "Santos e-Sports"
+      }
+    ],
+    "answer": "Santos e-Sports is the team name associated with streamers who play games also played by itsbigchase."
+  },
+  {
+    "question": "Find the average follower count of mods who moderate both Russian and English streams",
+    "cypher": "MATCH (u:User)-[:MODERATOR]->(s1:Stream)-[:HAS_LANGUAGE]->(l1:Language {name: 'ru'}), (u)-[:MODERATOR]->(s2:Stream)-[:HAS_LANGUAGE]->(l2:Language {name: 'en'}) WHERE u.followers IS NOT NULL RETURN AVG(u.followers) AS average_followers",
+    "query_type": "Aggregation",
+    "complexity": "4-hop",
+    "noise_applied": true,
+    "noise_type": "colloquialism",
+    "model": "anthropic-chat",
+    "database": "twitch",
+    "validated": true,
+    "result": [
+      {
+        "average_followers": 93333.25
+      }
+    ],
+    "answer": "The average follower count of mods who moderate both Russian and English streams is 93,333.25."
+  },
+  {
+    "question": "What's the description of the stream with the most followers among those who share chatters with deshplease?",
+    "cypher": "MATCH (s1:Stream {name: 'deshplease'})<-[:CHATTER]-(u:User)-[:CHATTER]->(s2:Stream) WHERE s2.followers IS NOT NULL AND s1 <> s2 RETURN s2.description AS stream_description ORDER BY s2.followers DESC LIMIT 1",
+    "query_type": "Sorting",
+    "complexity": "2-hop",
+    "noise_applied": false,
+    "model": "anthropic-chat",
+    "database": "twitch",
+    "validated": true,
+    "result": [
+      {
+        "stream_description": "Watch Me Play VideoGames"
+      }
+    ],
+    "answer": "The description of the stream with the most followers that shares chatters with deshplease is \"Watch Me Play VideoGames\"."
+  },
+  {
+    "question": "How many streams connect wickedbad4u to the ESO Stream Team through moderation relationships?",
+    "cypher": "MATCH (u:User {name: 'wickedbad4u'})-[:CHATTER]->(s1:Stream)-[:MODERATOR]->(s2:Stream)-[:HAS_TEAM]->(t:Team {name: 'ESO Stream Team'}) RETURN COUNT(DISTINCT s2) AS connection_count",
+    "query_type": "Existence Verification",
+    "complexity": "3-hop",
+    "noise_applied": false,
+    "model": "anthropic-chat",
+    "database": "twitch",
+    "validated": true,
+    "result": [
+      {
+        "connection_count": 1
+      }
+    ],
+    "answer": "Based on the query result, wickedbad4u is connected to 1 stream that is moderated by the ESO Stream Team."
+  },
+  {
+    "question": "What game does the streamer with the highest view count play, among those moderated by users who also moderate syna?",
+    "cypher": "MATCH (s1:Stream {name: 'syna'})<-[:MODERATOR]-(u:User)-[:MODERATOR]->(s2:Stream)-[:PLAYS]->(g:Game) WHERE s2.total_view_count IS NOT NULL RETURN g.name AS game_name ORDER BY s2.total_view_count DESC LIMIT 1",
+    "query_type": "Sorting",
+    "complexity": "3-hop",
+    "noise_applied": false,
+    "model": "anthropic-chat",
+    "database": "twitch",
+    "validated": true,
+    "result": [
+      {
+        "game_name": "Baldur's Gate: Dark Alliance"
+      }
+    ],
+    "answer": "The game with the highest view count among streams moderated by users who also moderate syna is \"Baldur's Gate: Dark Alliance\"."
+  },
+  {
+    "question": "Tell me the language of channels that have VIPs who are also VIPs for streamers playing Rust",
+    "cypher": "MATCH (g:Game {name: 'Rust'})<-[:PLAYS]-(s1:Stream)<-[:VIP]-(v:User)-[:VIP]->(s2:Stream)-[:HAS_LANGUAGE]->(l:Language) RETURN l.name AS language_name LIMIT 1",
+    "query_type": "Property Retrieval",
+    "complexity": "4-hop",
+    "noise_applied": false,
+    "model": "anthropic-chat",
+    "database": "twitch",
+    "validated": true,
+    "result": [
+      {
+        "language_name": "en"
+      }
+    ],
+    "answer": "Based on the query result, one language for channels with VIPs who are also VIPs for streamers playing Rust is English (en)."
+  },
+  {
+    "question": "How many paths of moderation connect elokratz to streams broadcasting in English?",
+    "cypher": "MATCH path = (u:User {name: 'elokratz'})-[:MODERATOR*1..3]->(s:Stream)-[:HAS_LANGUAGE]->(l:Language {name: 'en'}) RETURN COUNT(path) AS moderation_paths",
+    "query_type": "Existence Verification",
+    "complexity": "2-hop",
+    "noise_applied": false,
+    "model": "anthropic-chat",
+    "database": "twitch",
+    "validated": true,
+    "result": [
+      {
+        "moderation_paths": 5
+      }
+    ],
+    "answer": "There are 5 paths of moderation connecting elokratz to streams broadcasting in English."
+  },
+  {
+    "question": "What's the sum of all followers for streamers who are chatters in agustabell212's channel?",
+    "cypher": "MATCH (s:Stream {name: 'agustabell212'})<-[:CHATTER]-(u:User) WHERE u.followers IS NOT NULL RETURN SUM(u.followers) AS total_followers",
+    "query_type": "Aggregation",
+    "complexity": "1-hop",
+    "noise_applied": false,
+    "model": "anthropic-chat",
+    "database": "twitch",
+    "validated": true,
+    "result": [
+      {
+        "total_followers": 159814
+      }
+    ],
+    "answer": "The sum of followers for all chatters in agustabell212's channel is 159,814."
+  },
+  {
+    "question": "Find the URL of the channel with the lowest follower count that plays stuff also played by 9linda",
+    "cypher": "MATCH (s1:Stream {name: '9linda'})-[:PLAYS]->(g:Game)<-[:PLAYS]-(s2:Stream) WHERE s2.followers IS NOT NULL AND s1 <> s2 RETURN s2.url AS stream_url ORDER BY s2.followers ASC LIMIT 1",
+    "query_type": "Sorting",
+    "complexity": "2-hop",
+    "noise_applied": true,
+    "noise_type": "colloquialism",
+    "model": "anthropic-chat",
+    "database": "twitch",
+    "validated": true,
+    "result": [
+      {
+        "stream_url": "https://www.twitch.tv/z0l0t0ff"
+      }
+    ],
+    "answer": "The URL of the channel with the lowest follower count that plays games also played by 9linda is https://www.twitch.tv/z0l0t0ff."
+  },
+  {
+    "question": "Which streamers moderate channels that both play Rust and have English language settings?",
+    "cypher": "MATCH (u:User)-[:MODERATOR]->(s:Stream)-[:PLAYS]->(g:Game {name: 'Rust'}), (s)-[:HAS_LANGUAGE]->(l:Language {name: 'en'}) RETURN u.name AS moderator_name LIMIT 1",
+    "query_type": "Property Retrieval",
+    "complexity": "3-hop",
+    "noise_applied": false,
+    "model": "anthropic-chat",
+    "database": "twitch",
+    "validated": true,
+    "result": [
+      {
+        "moderator_name": "phelankeller"
+      }
+    ],
+    "answer": "Based on the query result, phelankeller is a moderator of a Rust stream with English language settings. However, the query only returned one result, so there may be other moderators that fit these criteria."
+  },
+  {
+    "question": "How many unique games are played by channels that creightonolsen has VIP status in?",
+    "cypher": "MATCH (s:Stream {name: 'creightonolsen'})-[:VIP]->(other:Stream)-[:PLAYS]->(g:Game) RETURN COUNT(DISTINCT g) AS total_games",
+    "query_type": "Aggregation",
+    "complexity": "2-hop",
+    "noise_applied": false,
+    "model": "anthropic-chat",
+    "database": "twitch",
+    "validated": true,
+    "result": [
+      {
+        "total_games": 0
+      }
+    ],
+    "answer": "Based on the query result, 0 unique games are played by channels that creightonolsen has VIP status in."
+  },
+  {
+    "question": "What's the creation date of the newest stream among those connected to pavagag through shared moderators?",
+    "cypher": "MATCH (s1:Stream {name: 'pavagagg'})<-[:MODERATOR]-(u:User)-[:MODERATOR]->(s2:Stream) WHERE s2.createdAt IS NOT NULL AND s1 <> s2 RETURN MAX(s2.createdAt) AS newest_creation_date",
+    "query_type": "Sorting",
+    "complexity": "2-hop",
+    "noise_applied": true,
+    "noise_type": "typo",
+    "model": "anthropic-chat",
+    "database": "twitch",
+    "validated": true,
+    "result": [
+      {
+        "newest_creation_date": "2021-05-09T14:16:40.370294000+00:00"
+      }
+    ],
+    "answer": "The newest stream connected to pavagag through shared moderators was created on May 9, 2021 at 2:16:40 PM UTC."
+  },
+  {
+    "question": "Count the VIP connections between streams that broadcast The Elder Scrolls Online",
+    "cypher": "MATCH (s1:Stream)-[:PLAYS]->(g:Game {name: 'The Elder Scrolls Online'}), (s2:Stream)-[:PLAYS]->(g), path = (s1)<-[:VIP]-(u:User)-[:VIP]->(s2) WHERE s1 <> s2 RETURN COUNT(DISTINCT path) AS vip_connections",
+    "query_type": "Existence Verification",
+    "complexity": "3-hop",
+    "noise_applied": false,
+    "model": "anthropic-chat",
+    "database": "twitch",
+    "validated": true,
+    "result": [
+      {
+        "vip_connections": 0
+      }
+    ],
+    "answer": "Based on the query result, there are 0 VIP connections between streams that broadcast The Elder Scrolls Online."
+  },
+  {
+    "question": "What's the follower count of atlanticdk?",
+    "cypher": "MATCH (s:Stream {name: 'atlanticdk'}) RETURN s.followers AS follower_count",
+    "query_type": "Property Retrieval",
+    "complexity": "0-hop",
+    "noise_applied": false,
+    "model": "anthropic-chat",
+    "database": "twitch",
+    "validated": true,
+    "result": [
+      {
+        "follower_count": 3231
+      }
+    ],
+    "answer": "atlanticdk has 3,231 followers."
+  },
+  {
+    "question": "What's the average total view count of folks who are VIPs in channels that belong to teams?",
+    "cypher": "MATCH (u:User)-[:VIP]->(s:Stream)-[:HAS_TEAM]->(t:Team) WHERE u.total_view_count IS NOT NULL RETURN AVG(u.total_view_count) AS average_views",
+    "query_type": "Aggregation",
+    "complexity": "2-hop",
+    "noise_applied": true,
+    "noise_type": "colloquialism",
+    "model": "anthropic-chat",
+    "database": "twitch",
+    "validated": true,
+    "result": [
+      {
+        "average_views": 14208310.399116369
+      }
+    ],
+    "answer": "The average total view count for VIP users in team-associated channels is approximately 14,208,310 views."
+  },
+  {
+    "question": "What's the location of DC1?",
+    "cypher": "MATCH (dc:DataCenter {name: 'DC1'}) RETURN dc.location AS datacenter_location",
+    "query_type": "Direct Property Access",
+    "complexity": "0-hop",
+    "noise_applied": false,
+    "model": "anthropic-chat",
+    "database": "network",
+    "validated": true,
+    "result": [
+      {
+        "datacenter_location": "Iceland, Rekjavik"
+      }
+    ],
+    "answer": "The location of DC1 is Iceland, Rekjavik."
+  },
+  {
+    "question": "How many machines are in rack DC1-RCK-1-1?",
+    "cypher": "MATCH (r:Rack {name: 'DC1-RCK-1-1'})-[:HOLDS]->(m:Machine) RETURN COUNT(m) AS total_machines",
+    "query_type": "Single-hop Aggregation",
+    "complexity": "1-hop",
+    "noise_applied": false,
+    "model": "anthropic-chat",
+    "database": "network",
+    "validated": true,
+    "result": [
+      {
+        "total_machines": 200
+      }
+    ],
+    "answer": "There are 200 machines in rack DC1-RCK-1-1."
+  },
+  {
+    "question": "What zone is router DC1-R-1 assigned to?",
+    "cypher": "MATCH (r:Router {name: 'DC1-R-1'}) RETURN r.zone AS router_zone",
+    "query_type": "Direct Property Access",
+    "complexity": "0-hop",
+    "noise_applied": false,
+    "model": "anthropic-chat",
+    "database": "network",
+    "validated": true,
+    "result": [
+      {
+        "router_zone": 1
+      }
+    ],
+    "answer": "Router DC1-R-1 is assigned to Zone 1."
+  },
+  {
+    "question": "How many apps are running on DC1-RCK-2-9-M-90?",
+    "cypher": "MATCH (m:Machine {name: 'DC1-RCK-2-9-M-90'})-[:RUNS]->(a:Application) RETURN COUNT(a) AS total_applications",
+    "query_type": "Single-hop Aggregation",
+    "complexity": "1-hop",
+    "noise_applied": true,
+    "noise_type": "colloquialism",
+    "model": "anthropic-chat",
+    "database": "network",
+    "validated": true,
+    "result": [
+      {
+        "total_applications": 1
+      }
+    ],
+    "answer": "1 app is running on DC1-RCK-2-9-M-90."
+  },
+  {
+    "question": "Which datacenter contains rack DC1-RCK-4-9?",
+    "cypher": "MATCH (dc:DataCenter)-[:CONTAINS]->(r:Rack {name: 'DC1-RCK-4-9'}) RETURN dc.name AS datacenter_name",
+    "query_type": "Single-hop Property Retrieval",
+    "complexity": "1-hop",
+    "noise_applied": false,
+    "model": "anthropic-chat",
+    "database": "network",
+    "validated": true,
+    "result": [
+      {
+        "datacenter_name": "DC1"
+      }
+    ],
+    "answer": "The rack DC1-RCK-4-9 is located in datacenter DC1."
+  },
+  {
+    "question": "Tell me the versions available for RHEL",
+    "cypher": "MATCH (s:Software {name: 'RHEL'}) RETURN s.versions AS software_versions",
+    "query_type": "Direct Property Access",
+    "complexity": "0-hop",
+    "noise_applied": false,
+    "model": "anthropic-chat",
+    "database": "network",
+    "validated": true,
+    "result": [
+      {
+        "software_versions": [
+          "7.1",
+          "7.2",
+          "7.3"
+        ]
+      }
+    ],
+    "answer": "Based on the query result, the available versions for RHEL are 7.1, 7.2, and 7.3."
+  },
+  {
+    "question": "How many racks does DC1 contain?",
+    "cypher": "MATCH (dc:DataCenter {name: 'DC1'})-[:CONTAINS]->(r:Rack) RETURN COUNT(r) AS total_racks",
+    "query_type": "Single-hop Aggregation",
+    "complexity": "1-hop",
+    "noise_applied": false,
+    "model": "anthropic-chat",
+    "database": "network",
+    "validated": true,
+    "result": [
+      {
+        "total_racks": 40
+      }
+    ],
+    "answer": "DC1 contains 40 racks."
+  },
+  {
+    "question": "Which zone does rack DC1-RCK-3-8 belong to?",
+    "cypher": "MATCH (r:Rack {name: 'DC1-RCK-3-8'}) RETURN r.zone AS rack_zone",
+    "query_type": "Direct Property Access",
+    "complexity": "0-hop",
+    "noise_applied": false,
+    "model": "anthropic-chat",
+    "database": "network",
+    "validated": true,
+    "result": [
+      {
+        "rack_zone": 3
+      }
+    ],
+    "answer": "Rack DC1-RCK-3-8 belongs to zone 3."
+  },
+  {
+    "question": "What software does the cms application depend on?",
+    "cypher": "MATCH (a:Software {name: 'cms'})-[:DEPENDS_ON]->(s:Software) RETURN COUNT(s) AS dependency_count",
+    "query_type": "Single-hop Aggregation",
+    "complexity": "1-hop",
+    "noise_applied": false,
+    "model": "anthropic-chat",
+    "database": "network",
+    "validated": true,
+    "result": [
+      {
+        "dependency_count": 3
+      }
+    ],
+    "answer": "The cms application depends on 3 pieces of software. However, the specific software names are not provided in the query result."
+  },
+  {
+    "question": "Find the datacenter location where machine DC1-RCK-1-1-M-1 is hosted",
+    "cypher": "MATCH (dc:DataCenter)-[:CONTAINS]->(r:Rack)-[:HOLDS]->(m:Machine {name: 'DC1-RCK-1-1-M-1'}) RETURN dc.location AS datacenter_location",
+    "query_type": "Two-hop Property Retrieval",
+    "complexity": "2-hop",
+    "noise_applied": false,
+    "model": "anthropic-chat",
+    "database": "network",
+    "validated": true,
+    "result": [
+      {
+        "datacenter_location": "Iceland, Rekjavik"
+      }
+    ],
+    "answer": "The machine DC1-RCK-1-1-M-1 is hosted in the datacenter located in Iceland, Rekjavik."
+  },
+  {
+    "question": "How many machines in total are there in datacenter DC1?",
+    "cypher": "MATCH (dc:DataCenter {name: 'DC1'})-[:CONTAINS]->(r:Rack)-[:HOLDS]->(m:Machine) RETURN COUNT(m) AS total_machines",
+    "query_type": "Two-hop Aggregation",
+    "complexity": "2-hop",
+    "noise_applied": false,
+    "model": "anthropic-chat",
+    "database": "network",
+    "validated": true,
+    "result": [
+      {
+        "total_machines": 8000
+      }
+    ],
+    "answer": "There are 8,000 machines in datacenter DC1."
+  },
+  {
+    "question": "What ports does the neo4j software expose?",
+    "cypher": "MATCH (s:Software {name: 'neo4j'}) RETURN s.ports AS software_ports",
+    "query_type": "Direct Property Access",
+    "complexity": "0-hop",
+    "noise_applied": false,
+    "model": "anthropic-chat",
+    "database": "network",
+    "validated": true,
+    "result": [
+      {
+        "software_ports": [
+          7474,
+          7473,
+          7687
+        ]
+      }
+    ],
+    "answer": "Based on the query result, Neo4j software exposes three ports: 7474, 7473, and 7687."
+  },
+  {
+    "question": "Which interface routes traffic for the DC1-RE egress router?",
+    "cypher": "MATCH (e:Egress {name: 'DC1-RE'})-[:ROUTES]->(i:Interface) RETURN i.ip AS interface_ip",
+    "query_type": "Single-hop Property Retrieval",
+    "complexity": "1-hop",
+    "noise_applied": false,
+    "model": "anthropic-chat",
+    "database": "network",
+    "validated": true,
+    "result": [
+      {
+        "interface_ip": "10.0.0.254"
+      }
+    ],
+    "answer": "The DC1-RE egress router routes traffic through the interface with IP address 10.0.0.254."
+  },
+  {
+    "question": "What's the zone for network 10.4?",
+    "cypher": "MATCH (n:Network {ip: '10.4'}) RETURN n.zone AS network_zone",
+    "query_type": "Direct Property Access",
+    "complexity": "0-hop",
+    "noise_applied": false,
+    "model": "anthropic-chat",
+    "database": "network",
+    "validated": true,
+    "result": [
+      {
+        "network_zone": 4
+      }
+    ],
+    "answer": "The zone for network 10.4 is 4."
+  },
+  {
+    "question": "How many servers are in zone 4 of DC1?",
+    "cypher": "MATCH (dc:DataCenter {name: 'DC1'})-[:CONTAINS]->(r:Rack {zone: 4})-[:HOLDS]->(m:Machine) RETURN COUNT(m) AS total_machines",
+    "query_type": "Two-hop Aggregation",
+    "complexity": "2-hop",
+    "noise_applied": true,
+    "noise_type": "colloquialism",
+    "model": "anthropic-chat",
+    "database": "network",
+    "validated": true,
+    "result": [
+      {
+        "total_machines": 2000
+      }
+    ],
+    "answer": "There are 2000 servers in zone 4 of DC1."
+  },
+  {
+    "question": "What type of machine is DC1-RCK-3-8-M-49?",
+    "cypher": "MATCH (m:Machine {name: 'DC1-RCK-3-8-M-49'})-[:TYPE]->(t:Type) RETURN t.name AS machine_type",
+    "query_type": "Single-hop Property Retrieval",
+    "complexity": "1-hop",
+    "noise_applied": false,
+    "model": "anthropic-chat",
+    "database": "network",
+    "validated": true,
+    "result": [
+      {
+        "machine_type": "xs-1/1/1"
+      }
+    ],
+    "answer": "The machine DC1-RCK-3-8-M-49 is of type xs-1/1/1."
+  },
+  {
+    "question": "Tell me what software the webap depends on",
+    "cypher": "MATCH (a:Software {name: 'webapp'})-[:DEPENDS_ON]->(s:Software) RETURN COUNT(s) AS dependency_count",
+    "query_type": "Single-hop Aggregation",
+    "complexity": "1-hop",
+    "noise_applied": true,
+    "noise_type": "typo",
+    "model": "anthropic-chat",
+    "database": "network",
+    "validated": true,
+    "result": [
+      {
+        "dependency_count": 2
+      }
+    ],
+    "answer": "The webapp depends on 2 different software components."
+  },
+  {
+    "question": "What's the previous version of RHEL 7.3?",
+    "cypher": "MATCH (v:Version {name: '7.3'})-[:PREVIOUS]->(pv:Version) RETURN pv.name AS previous_version",
+    "query_type": "Single-hop Property Retrieval",
+    "complexity": "1-hop",
+    "noise_applied": false,
+    "model": "anthropic-chat",
+    "database": "network",
+    "validated": true,
+    "result": [
+      {
+        "previous_version": "7.2"
+      }
+    ],
+    "answer": "The previous version of RHEL 7.3 is 7.2."
+  },
+  {
+    "question": "How many apps are running on machines in rack DC1-RCK-2-9?",
+    "cypher": "MATCH (r:Rack {name: 'DC1-RCK-2-9'})-[:HOLDS]->(m:Machine)-[:RUNS]->(a:Application) RETURN COUNT(a) AS total_applications",
+    "query_type": "Two-hop Aggregation",
+    "complexity": "2-hop",
+    "noise_applied": true,
+    "noise_type": "colloquialism",
+    "model": "anthropic-chat",
+    "database": "network",
+    "validated": true,
+    "result": [
+      {
+        "total_applications": 200
+      }
+    ],
+    "answer": "200 apps are running on machines in rack DC1-RCK-2-9."
+  },
+  {
+    "question": "How many machines are running applications that depend on postgres across all racks in zone 4?",
+    "cypher": "MATCH (r:Rack {zone: 4})-[:HOLDS]->(m:Machine)-[:RUNS]->(a:Application)-[:INSTANCE]->(s:Software)-[:DEPENDS_ON]->(dep:Software {name: 'postgres'}) RETURN COUNT(DISTINCT m) AS total_machines",
+    "query_type": "Aggregation",
+    "complexity": "4-hop",
+    "noise_applied": false,
+    "model": "anthropic-chat",
+    "database": "network",
+    "validated": true,
+    "result": [
+      {
+        "total_machines": 0
+      }
+    ],
+    "answer": "0 machines in zone 4 are running applications that depend on postgres."
+  },
+  {
+    "question": "What's the IP address of the interface that connects to the switch in rack 8 of zone 4?",
+    "cypher": "MATCH (s:Switch {rack: 8})-[:ROUTES]->(i:Interface)<-[:ROUTES]-(z:Zone {zone: 4}) RETURN i.ip AS interface_ip",
+    "query_type": "Property Retrieval",
+    "complexity": "2-hop",
+    "noise_applied": false,
+    "model": "anthropic-chat",
+    "database": "network",
+    "validated": true,
+    "result": [
+      {
+        "interface_ip": "10.4.8.254"
+      }
+    ],
+    "answer": "The IP address of the interface that connects to the switch in rack 8 of zone 4 is 10.4.8.254."
+  },
+  {
+    "question": "How many different versions of RHEL are deployed on machines in DC1's racks?",
+    "cypher": "MATCH (dc:DataCenter {name: 'DC1'})-[:CONTAINS]->(r:Rack)-[:HOLDS]->(m:Machine)-[:RUNS]->(os:OS)-[:INSTANCE]->(v:Version)<-[:VERSION]-(s:Software {name: 'RHEL'}) RETURN COUNT(DISTINCT v.name) AS version_count",
+    "query_type": "Aggregation",
+    "complexity": "5-hop",
+    "noise_applied": false,
+    "model": "anthropic-chat",
+    "database": "network",
+    "validated": true,
+    "result": [
+      {
+        "version_count": 3
+      }
+    ],
+    "answer": "In DC1's racks, there are 3 different versions of Red Hat Enterprise Linux (RHEL) deployed on machines."
+  },
+  {
+    "question": "What port does the webserver application listen on when running on machine DC1-RCK-1-1-M-1?",
+    "cypher": "MATCH (m:Machine {name: 'DC1-RCK-1-1-M-1'})-[:RUNS]->(a:Application {name: 'webserver'})-[:LISTENS]->(p:Port) RETURN p.port AS listening_port LIMIT 1",
+    "query_type": "Property Retrieval",
+    "complexity": "2-hop",
+    "noise_applied": false,
+    "model": "anthropic-chat",
+    "database": "network",
+    "validated": true,
+    "result": [
+      {
+        "listening_port": 443
+      }
+    ],
+    "answer": "The webserver application on machine DC1-RCK-1-1-M-1 listens on port 443."
+  },
+  {
+    "question": "What's the total RAM capacity of all machines in zone 3 that are type xs?",
+    "cypher": "MATCH (r:Rack {zone: 3})-[:HOLDS]->(m:Machine)-[:TYPE]->(t:Type {type: 'xs'}) RETURN SUM(t.ram) AS total_ram",
+    "query_type": "Aggregation",
+    "complexity": "2-hop",
+    "noise_applied": false,
+    "model": "anthropic-chat",
+    "database": "network",
+    "validated": true,
+    "result": [
+      {
+        "total_ram": 520
+      }
+    ],
+    "answer": "The total RAM capacity of all machines of type xs in zone 3 is 520 units."
+  },
+  {
+    "question": "How many boxes in DC-1 run apps that depend on the java service?",
+    "cypher": "MATCH (dc:DataCenter {name: 'DC1'})-[:CONTAINS]->(r:Rack)-[:HOLDS]->(m:Machine)-[:RUNS]->(a:Application)-[:INSTANCE]->(s:Software)-[:DEPENDS_ON]->(java:Software {name: 'java'}) RETURN COUNT(DISTINCT m) AS machine_count",
+    "query_type": "Aggregation",
+    "complexity": "5-hop",
+    "noise_applied": true,
+    "noise_type": "colloquialism_and_typo",
+    "model": "anthropic-chat",
+    "database": "network",
+    "validated": true,
+    "result": [
+      {
+        "machine_count": 1588
+      }
+    ],
+    "answer": "1,588 boxes in DC-1 run applications that depend on the java service."
+  },
+  {
+    "question": "What's the highest zone number among racks that hold machines running neo4j services?",
+    "cypher": "MATCH (r:Rack)-[:HOLDS]->(m:Machine)-[:RUNS]->(s:Service)-[:INSTANCE]->(soft:Software {name: 'neo4j'}) WHERE r.zone IS NOT NULL RETURN MAX(r.zone) AS highest_zone",
+    "query_type": "Sorting",
+    "complexity": "3-hop",
+    "noise_applied": false,
+    "model": "anthropic-chat",
+    "database": "network",
+    "validated": true,
+    "result": [
+      {
+        "highest_zone": 4
+      }
+    ],
+    "answer": "The highest zone number among racks that hold machines running Neo4j services is 4."
+  },
+  {
+    "question": "Tell me the location of the data center containing rack DC1-RCK-4-2",
+    "cypher": "MATCH (dc:DataCenter)-[:CONTAINS]->(r:Rack {name: 'DC1-RCK-4-2'}) RETURN dc.location AS datacenter_location",
+    "query_type": "Property Retrieval",
+    "complexity": "1-hop",
+    "noise_applied": false,
+    "model": "anthropic-chat",
+    "database": "network",
+    "validated": true,
+    "result": [
+      {
+        "datacenter_location": "Iceland, Rekjavik"
+      }
+    ],
+    "answer": "The data center containing rack DC1-RCK-4-2 is located in Reykjavik, Iceland."
+  },
+  {
+    "question": "How many interfaces connect to networks in zone 1 through routers in the DC?",
+    "cypher": "MATCH (dc:DataCenter)-[:CONTAINS]->(router:Router)-[:ROUTES]->(i:Interface)-[:CONNECTS]->(n:Network {zone: 1}) RETURN COUNT(DISTINCT i) AS interface_count",
+    "query_type": "Aggregation",
+    "complexity": "3-hop",
+    "noise_applied": true,
+    "noise_type": "colloquialism",
+    "model": "anthropic-chat",
+    "database": "network",
+    "validated": true,
+    "result": [
+      {
+        "interface_count": 2
+      }
+    ],
+    "answer": "2 interfaces connect to networks in zone 1 through routers in the DC."
+  },
+  {
+    "question": "What's the earliest startTime among processes running on machines in rack DC1-RCK-1-1?",
+    "cypher": "MATCH (r:Rack {name: 'DC1-RCK-1-1'})-[:HOLDS]->(m:Machine)-[:RUNS]->(p:Process) WHERE p.startTime IS NOT NULL RETURN MIN(p.startTime) AS earliest_start",
+    "query_type": "Sorting",
+    "complexity": "2-hop",
+    "noise_applied": false,
+    "model": "anthropic-chat",
+    "database": "network",
+    "validated": true,
+    "result": [
+      {
+        "earliest_start": 1605737255008
+      }
+    ],
+    "answer": "The earliest startTime among processes running on machines in rack DC1-RCK-1-1 is 1605737255008."
+  },
+  {
+    "question": "How many hops separate RHEL version 7.1 from version 7.3 through PREVIOUS relationships?",
+    "cypher": "MATCH path = (v1:Version {name: '7.1'})-[:PREVIOUS*]-(v2:Version {name: '7.3'}) RETURN LENGTH(path) AS version_distance",
+    "query_type": "Existence Verification",
+    "complexity": "2-hop",
+    "noise_applied": false,
+    "model": "anthropic-chat",
+    "database": "network",
+    "validated": true,
+    "result": [
+      {
+        "version_distance": 2
+      }
+    ],
+    "answer": "Based on the query result, there are 2 hops separating RHEL version 7.1 from version 7.3 through PREVIOUS relationships."
+  },
+  {
+    "question": "What's the rack number of the switch routing to IP 10.4.8.254?",
+    "cypher": "MATCH (s:Switch)-[:ROUTES]->(i:Interface {ip: '10.4.8.254'}) RETURN s.rack AS switch_rack",
+    "query_type": "Property Retrieval",
+    "complexity": "1-hop",
+    "noise_applied": false,
+    "model": "anthropic-chat",
+    "database": "network",
+    "validated": true,
+    "result": [
+      {
+        "switch_rack": 8
+      }
+    ],
+    "answer": "The rack number of the switch routing to IP 10.4.8.254 is 8."
+  },
+  {
+    "question": "Count the services that webapp depends on through its software dependencies",
+    "cypher": "MATCH (a:Application {name: 'webapp'})-[:INSTANCE]->(s:Software)-[:DEPENDS_ON]->(dep:Software)<-[:INSTANCE]-(serv:Service) RETURN COUNT(DISTINCT serv) AS dependency_count",
+    "query_type": "Aggregation",
+    "complexity": "3-hop",
+    "noise_applied": false,
+    "model": "anthropic-chat",
+    "database": "network",
+    "validated": true,
+    "result": [
+      {
+        "dependency_count": 3176
+      }
+    ],
+    "answer": "According to the query result, the webapp depends on 3,176 distinct services through its software dependencies."
+  },
+  {
+    "question": "Find the name of the OS running on machien DC1-RCK-3-8-M-49",
+    "cypher": "MATCH (m:Machine {name: 'DC1-RCK-3-8-M-49'})-[:RUNS]->(os:OS) RETURN os.name AS os_name",
+    "query_type": "Property Retrieval",
+    "complexity": "1-hop",
+    "noise_applied": true,
+    "noise_type": "typo",
+    "model": "anthropic-chat",
+    "database": "network",
+    "validated": true,
+    "result": [
+      {
+        "os_name": "16.10"
+      }
+    ],
+    "answer": "The OS running on machine DC1-RCK-3-8-M-49 is 16.10."
+  },
+  {
+    "question": "How many switches are in racks that share the same data center as rack DC1-RCK-1-1?",
+    "cypher": "MATCH (r1:Rack {name: 'DC1-RCK-1-1'})<-[:CONTAINS]-(dc:DataCenter)-[:CONTAINS]->(r2:Rack)-[:HOLDS]->(s:Switch) RETURN COUNT(DISTINCT s) AS switch_count",
+    "query_type": "Aggregation",
+    "complexity": "3-hop",
+    "noise_applied": false,
+    "model": "anthropic-chat",
+    "database": "network",
+    "validated": true,
+    "result": [
+      {
+        "switch_count": 39
+      }
+    ],
+    "answer": "There are 39 switches in racks that share the same data center as rack DC1-RCK-1-1."
+  },
+  {
+    "question": "What's the lowest CPU count among machine types used in zone 4?",
+    "cypher": "MATCH (r:Rack {zone: 4})-[:HOLDS]->(m:Machine)-[:TYPE]->(t:Type) WHERE t.cpu IS NOT NULL RETURN MIN(t.cpu) AS lowest_cpu",
+    "query_type": "Sorting",
+    "complexity": "2-hop",
+    "noise_applied": false,
+    "model": "anthropic-chat",
+    "database": "network",
+    "validated": true,
+    "result": [
+      {
+        "lowest_cpu": 1
+      }
+    ],
+    "answer": "The lowest CPU count among machine types used in zone 4 is 1."
+  },
+  {
+    "question": "How many different software packages have dependencies defined in the entire infrastructure?",
+    "cypher": "MATCH (s1:Software)-[:DEPENDS_ON]->(s2:Software) RETURN COUNT(DISTINCT s1) AS dependent_software_count",
+    "query_type": "Aggregation",
+    "complexity": "1-hop",
+    "noise_applied": false,
+    "model": "anthropic-chat",
+    "database": "network",
+    "validated": true,
+    "result": [
+      {
+        "dependent_software_count": 2
+      }
+    ],
+    "answer": "2 different software packages have dependencies defined in the infrastructure."
+  },
+  {
+    "question": "What's the average disk capacity of xs type machines across all zones?",
+    "cypher": "MATCH (r:Rack)-[:HOLDS]->(m:Machine)-[:TYPE]->(t:Type {type: 'xs'}) RETURN AVG(t.disk) AS average_disk",
+    "query_type": "Aggregation",
+    "complexity": "2-hop",
+    "noise_applied": false,
+    "model": "anthropic-chat",
+    "database": "network",
+    "validated": true,
+    "result": [
+      {
+        "average_disk": 1.0
+      }
+    ],
+    "answer": "The average disk capacity of xs type machines is 1.0."
+  },
+  {
+    "question": "Tell me the latest startTime of processes that are instances of REHL version 7.2",
+    "cypher": "MATCH (p:Process)-[:INSTANCE]->(v:Version {name: '7.2'})<-[:VERSION]-(s:Software {name: 'RHEL'}) WHERE p.startTime IS NOT NULL RETURN MAX(p.startTime) AS latest_start",
+    "query_type": "Sorting",
+    "complexity": "2-hop",
+    "noise_applied": true,
+    "noise_type": "typo",
+    "model": "anthropic-chat",
+    "database": "network",
+    "validated": true,
+    "result": [
+      {
+        "latest_start": 1606596896019
+      }
+    ],
+    "answer": "The latest startTime for processes that are instances of RHEL version 7.2 is 1606596896019 (which represents a timestamp in milliseconds)."
+  },
+  {
+    "question": "How many ports does the neo4j software expose according to its definition?",
+    "cypher": "MATCH (s:Software {name: 'neo4j'}) RETURN SIZE(s.ports) AS total_ports",
+    "query_type": "Property Retrieval",
+    "complexity": "0-hop",
+    "noise_applied": false,
+    "model": "anthropic-chat",
+    "database": "network",
+    "validated": true,
+    "result": [
+      {
+        "total_ports": 3
+      }
+    ],
+    "answer": "According to its definition, Neo4j software exposes 3 ports."
+  },
+  {
+    "question": "Count the machines that can reach port 80 through their network interfaces",
+    "cypher": "MATCH (m:Machine)-[:ROUTES]->(i:Interface)-[:EXPOSES]->(p:Port {port: 80}) RETURN COUNT(DISTINCT m) AS machine_count",
+    "query_type": "Aggregation",
+    "complexity": "2-hop",
+    "noise_applied": false,
+    "model": "anthropic-chat",
+    "database": "network",
+    "validated": true,
+    "result": [
+      {
+        "machine_count": 4866
+      }
+    ],
+    "answer": "4,866 machines can reach port 80 through their network interfaces."
+  },
+  {
+    "question": "What's the zone of the network that router DC1-R-1 connects to?",
+    "cypher": "MATCH (r:Router {name: 'DC1-R-1'})-[:ROUTES]->(i:Interface)-[:CONNECTS]->(n:Network) RETURN n.zone AS network_zone",
+    "query_type": "Property Retrieval",
+    "complexity": "2-hop",
+    "noise_applied": false,
+    "model": "anthropic-chat",
+    "database": "network",
+    "validated": true,
+    "result": [
+      {
+        "network_zone": 1
+      }
+    ],
+    "answer": "Based on the query result, the router DC1-R-1 connects to a network in zone 1."
+  },
+  {
+    "question": "What's the unit price of Chai?",
+    "cypher": "MATCH (p:Product {productName: 'Chai'}) RETURN p.unitPrice AS product_price",
+    "query_type": "Direct Property Access",
+    "complexity": "0-hop",
+    "noise_applied": false,
+    "model": "anthropic-chat",
+    "database": "northwind",
+    "validated": true,
+    "result": [
+      {
+        "product_price": 18.0
+      }
+    ],
+    "answer": "The unit price of Chai is $18.00."
+  },
+  {
+    "question": "How many units of Mozzarella di Giovanni are in stock?",
+    "cypher": "MATCH (p:Product {productName: 'Mozzarella di Giovanni'}) RETURN p.unitsInStock AS stock_quantity",
+    "query_type": "Direct Property Access",
+    "complexity": "0-hop",
+    "noise_applied": false,
+    "model": "anthropic-chat",
+    "database": "northwind",
+    "validated": true,
+    "result": [
+      {
+        "stock_quantity": 14
+      }
+    ],
+    "answer": "There are 14 units of Mozzarella di Giovanni in stock."
+  },
+  {
+    "question": "What's the contact name for Alfreds Futterkiste?",
+    "cypher": "MATCH (c:Customer {companyName: 'Alfreds Futterkiste'}) RETURN c.contactName AS contact_name",
+    "query_type": "Direct Property Access",
+    "complexity": "0-hop",
+    "noise_applied": false,
+    "model": "anthropic-chat",
+    "database": "northwind",
+    "validated": true,
+    "result": [
+      {
+        "contact_name": "Maria Anders"
+      }
+    ],
+    "answer": "Maria Anders is the contact name for Alfreds Futterkiste."
+  },
+  {
+    "question": "Tell me the city where White Clover Markets is located",
+    "cypher": "MATCH (c:Customer {companyName: 'White Clover Markets'}) RETURN c.city AS customer_city",
+    "query_type": "Direct Property Access",
+    "complexity": "0-hop",
+    "noise_applied": false,
+    "model": "anthropic-chat",
+    "database": "northwind",
+    "validated": true,
+    "result": [
+      {
+        "customer_city": "Seattle"
+      }
+    ],
+    "answer": "White Clover Markets is located in Seattle."
+  },
+  {
+    "question": "What's the price of Sasquatch Ale?",
+    "cypher": "MATCH (p:Product {productName: 'Sasquatch Ale'}) RETURN p.unitPrice AS product_price",
+    "query_type": "Direct Property Access",
+    "complexity": "0-hop",
+    "noise_applied": false,
+    "model": "anthropic-chat",
+    "database": "northwind",
+    "validated": true,
+    "result": [
+      {
+        "product_price": 14.0
+      }
+    ],
+    "answer": "The price of Sasquatch Ale is $14.00."
+  },
+  {
+    "question": "Is R\u00f6ssle Sauerkraut discontinued?",
+    "cypher": "MATCH (p:Product {productName: 'R\u00f6ssle Sauerkraut'}) RETURN p.discontinued AS is_discontinued",
+    "query_type": "Direct Property Access",
+    "complexity": "0-hop",
+    "noise_applied": false,
+    "model": "anthropic-chat",
+    "database": "northwind",
+    "validated": true,
+    "result": [
+      {
+        "is_discontinued": true
+      }
+    ],
+    "answer": "Yes, R\u00f6ssle Sauerkraut is discontinued."
+  },
+  {
+    "question": "What's the phone number of Ernst Handel?",
+    "cypher": "MATCH (c:Customer {companyName: 'Ernst Handel'}) RETURN c.phone AS phone_number",
+    "query_type": "Direct Property Access",
+    "complexity": "0-hop",
+    "noise_applied": false,
+    "model": "anthropic-chat",
+    "database": "northwind",
+    "validated": true,
+    "result": [
+      {
+        "phone_number": "7675-3425"
+      }
+    ],
+    "answer": "The phone number for Ernst Handel is 7675-3425."
+  },
+  {
+    "question": "What country is Exotic Liquids based in?",
+    "cypher": "MATCH (s:Supplier {companyName: 'Exotic Liquids'}) RETURN s.country AS supplier_country",
+    "query_type": "Direct Property Access",
+    "complexity": "0-hop",
+    "noise_applied": false,
+    "model": "anthropic-chat",
+    "database": "northwind",
+    "validated": true,
+    "result": [
+      {
+        "supplier_country": "UK"
+      }
+    ],
+    "answer": "Exotic Liquids is based in the UK."
+  },
+  {
+    "question": "How many products does Exotic Liquids supply?",
+    "cypher": "MATCH (s:Supplier {companyName: 'Exotic Liquids'})-[:SUPPLIES]->(p:Product) RETURN COUNT(p) AS total_products",
+    "query_type": "Single-hop Aggregation",
+    "complexity": "1-hop",
+    "noise_applied": false,
+    "model": "anthropic-chat",
+    "database": "northwind",
+    "validated": true,
+    "result": [
+      {
+        "total_products": 3
+      }
+    ],
+    "answer": "Exotic Liquids supplies 3 products."
+  },
+  {
+    "question": "What category does Chai belong to?",
+    "cypher": "MATCH (p:Product {productName: 'Chai'})-[:PART_OF]->(c:Category) RETURN c.categoryName AS category_name",
+    "query_type": "Single-hop Property Retrieval",
+    "complexity": "1-hop",
+    "noise_applied": false,
+    "model": "anthropic-chat",
+    "database": "northwind",
+    "validated": true,
+    "result": [
+      {
+        "category_name": "Beverages"
+      }
+    ],
+    "answer": "Chai belongs to the Beverages category."
+  },
+  {
+    "question": "How many orders has Alfreds Futterkiste placed?",
+    "cypher": "MATCH (c:Customer {companyName: 'Alfreds Futterkiste'})-[:PURCHASED]->(o:Order) RETURN COUNT(o) AS total_orders",
+    "query_type": "Single-hop Aggregation",
+    "complexity": "1-hop",
+    "noise_applied": false,
+    "model": "anthropic-chat",
+    "database": "northwind",
+    "validated": true,
+    "result": [
+      {
+        "total_orders": 6
+      }
+    ],
+    "answer": "Alfreds Futterkiste has placed 6 orders."
+  },
+  {
+    "question": "What's the average price of beverages?",
+    "cypher": "MATCH (c:Category {categoryName: 'Beverages'})<-[:PART_OF]-(p:Product) WHERE p.unitPrice IS NOT NULL RETURN AVG(p.unitPrice) AS average_price",
+    "query_type": "Single-hop Aggregation",
+    "complexity": "1-hop",
+    "noise_applied": false,
+    "model": "anthropic-chat",
+    "database": "northwind",
+    "validated": true,
+    "result": [
+      {
+        "average_price": 37.97916666666667
+      }
+    ],
+    "answer": "The average price of beverages is $37.98."
+  },
+  {
+    "question": "How many products are in the Beverages category?",
+    "cypher": "MATCH (c:Category {categoryName: 'Beverages'})<-[:PART_OF]-(p:Product) RETURN COUNT(p) AS product_count",
+    "query_type": "Single-hop Aggregation",
+    "complexity": "1-hop",
+    "noise_applied": false,
+    "model": "anthropic-chat",
+    "database": "northwind",
+    "validated": true,
+    "result": [
+      {
+        "product_count": 12
+      }
+    ],
+    "answer": "There are 12 products in the Beverages category."
+  },
+  {
+    "question": "What's the highest priced product from Exotic Liquids?",
+    "cypher": "MATCH (s:Supplier {companyName: 'Exotic Liquids'})-[:SUPPLIES]->(p:Product) WHERE p.unitPrice IS NOT NULL RETURN MAX(p.unitPrice) AS highest_price",
+    "query_type": "Single-hop Aggregation",
+    "complexity": "1-hop",
+    "noise_applied": false,
+    "model": "anthropic-chat",
+    "database": "northwind",
+    "validated": true,
+    "result": [
+      {
+        "highest_price": 19.0
+      }
+    ],
+    "answer": "The highest priced product from Exotic Liquids is $19.00."
+  },
+  {
+    "question": "Who supplies Mozzarella di Giovanni?",
+    "cypher": "MATCH (s:Supplier)-[:SUPPLIES]->(p:Product {productName: 'Mozzarella di Giovanni'}) RETURN s.companyName AS supplier_name",
+    "query_type": "Single-hop Property Retrieval",
+    "complexity": "1-hop",
+    "noise_applied": false,
+    "model": "anthropic-chat",
+    "database": "northwind",
+    "validated": true,
+    "result": [
+      {
+        "supplier_name": "Formaggi Fortini s.r.l."
+      }
+    ],
+    "answer": "Formaggi Fortini s.r.l. supplies Mozzarella di Giovanni."
+  },
+  {
+    "question": "How many unique products has Ernst Handel ordered?",
+    "cypher": "MATCH (c:Customer {companyName: 'Ernst Handel'})-[:PURCHASED]->(o:Order)-[:ORDERS]->(p:Product) RETURN COUNT(DISTINCT p) AS unique_products",
+    "query_type": "Two-hop Aggregation",
+    "complexity": "2-hop",
+    "noise_applied": false,
+    "model": "anthropic-chat",
+    "database": "northwind",
+    "validated": true,
+    "result": [
+      {
+        "unique_products": 56
+      }
+    ],
+    "answer": "Ernst Handel has ordered 56 unique products."
+  },
+  {
+    "question": "What's the total quantity of Chai ordered across all orders?",
+    "cypher": "MATCH (p:Product {productName: 'Chai'})<-[r:ORDERS]-(o:Order) RETURN SUM(r.quantity) AS total_quantity",
+    "query_type": "Single-hop Aggregation",
+    "complexity": "1-hop",
+    "noise_applied": false,
+    "model": "anthropic-chat",
+    "database": "northwind",
+    "validated": true,
+    "result": [
+      {
+        "total_quantity": 828
+      }
+    ],
+    "answer": "The total quantity of Chai ordered across all orders is 828."
+  },
+  {
+    "question": "How many products has White Clover Markets ordered?",
+    "cypher": "MATCH (c:Customer {companyName: 'White Clover Markets'})-[:PURCHASED]->(o:Order)-[:ORDERS]->(p:Product) RETURN COUNT(DISTINCT p) AS product_count",
+    "query_type": "Two-hop Aggregation",
+    "complexity": "2-hop",
+    "noise_applied": false,
+    "model": "anthropic-chat",
+    "database": "northwind",
+    "validated": true,
+    "result": [
+      {
+        "product_count": 32
+      }
+    ],
+    "answer": "White Clover Markets has ordered 32 distinct products."
+  },
+  {
+    "question": "What's the average price of products ordered by Alfreds Futterkiste?",
+    "cypher": "MATCH (c:Customer {companyName: 'Alfreds Futterkiste'})-[:PURCHASED]->(o:Order)-[:ORDERS]->(p:Product) WHERE p.unitPrice IS NOT NULL RETURN AVG(p.unitPrice) AS average_price",
+    "query_type": "Two-hop Aggregation",
+    "complexity": "2-hop",
+    "noise_applied": false,
+    "model": "anthropic-chat",
+    "database": "northwind",
+    "validated": true,
+    "result": [
+      {
+        "average_price": 26.7375
+      }
+    ],
+    "answer": "The average price of products ordered by Alfreds Futterkiste is $26.74."
+  },
+  {
+    "question": "How many customers have ordered Sasquatch Ale?",
+    "cypher": "MATCH (p:Product {productName: 'Sasquatch Ale'})<-[:ORDERS]-(o:Order)<-[:PURCHASED]-(c:Customer) RETURN COUNT(DISTINCT c) AS customer_count",
+    "query_type": "Two-hop Aggregation",
+    "complexity": "2-hop",
+    "noise_applied": false,
+    "model": "anthropic-chat",
+    "database": "northwind",
+    "validated": true,
+    "result": [
+      {
+        "customer_count": 14
+      }
+    ],
+    "answer": "14 customers have ordered Sasquatch Ale."
+  },
+  {
+    "question": "What's the highest unit price among products in order 10248?",
+    "cypher": "MATCH (o:Order {orderID: '10248'})-[:ORDERS]->(p:Product) WHERE p.unitPrice IS NOT NULL RETURN MAX(p.unitPrice) AS highest_price",
+    "query_type": "Single-hop Aggregation",
+    "complexity": "1-hop",
+    "noise_applied": false,
+    "model": "anthropic-chat",
+    "database": "northwind",
+    "validated": true,
+    "result": [
+      {
+        "highest_price": 34.8
+      }
+    ],
+    "answer": "The highest unit price among products in order 10248 is $34.80."
+  },
+  {
+    "question": "How many different suppliers provide products in the Beverages category?",
+    "cypher": "MATCH (s:Supplier)-[:SUPPLIES]->(p:Product)-[:PART_OF]->(c:Category {categoryName: 'Beverages'}) RETURN COUNT(DISTINCT s) AS supplier_count",
+    "query_type": "Two-hop Aggregation",
+    "complexity": "2-hop",
+    "noise_applied": false,
+    "model": "anthropic-chat",
+    "database": "northwind",
+    "validated": true,
+    "result": [
+      {
+        "supplier_count": 8
+      }
+    ],
+    "answer": "8 different suppliers provide products in the Beverages category."
+  },
+  {
+    "question": "What's the total value of products ordered by Lonesome Pine Restaurant?",
+    "cypher": "MATCH (c:Customer {companyName: 'Lonesome Pine Restaurant'})-[:PURCHASED]->(o:Order)-[r:ORDERS]->(p:Product) RETURN SUM(r.quantity * p.unitPrice) AS total_value",
+    "query_type": "Two-hop Aggregation",
+    "complexity": "2-hop",
+    "noise_applied": false,
+    "model": "anthropic-chat",
+    "database": "northwind",
+    "validated": true,
+    "result": [
+      {
+        "total_value": 4437.1
+      }
+    ],
+    "answer": "The total value of products ordered by Lonesome Pine Restaurant is $4,437.10."
+  },
+  {
+    "question": "How many orders contain products from the Beverages category?",
+    "cypher": "MATCH (c:Category {categoryName: 'Beverages'})<-[:PART_OF]-(p:Product)<-[:ORDERS]-(o:Order) RETURN COUNT(DISTINCT o) AS order_count",
+    "query_type": "Two-hop Aggregation",
+    "complexity": "2-hop",
+    "noise_applied": false,
+    "model": "anthropic-chat",
+    "database": "northwind",
+    "validated": true,
+    "result": [
+      {
+        "order_count": 354
+      }
+    ],
+    "answer": "354 orders contain products from the Beverages category."
+  },
+  {
+    "question": "How many different products has Lonesome Pine Restaurant ordered that are supplied by Exotic Liquids?",
+    "cypher": "MATCH (c:Customer {companyName: 'Lonesome Pine Restaurant'})-[:PURCHASED]->(o:Order)-[:ORDERS]->(p:Product)<-[:SUPPLIES]-(s:Supplier {companyName: 'Exotic Liquids'}) RETURN COUNT(DISTINCT p) AS total_products",
+    "query_type": "Aggregation",
+    "complexity": "3-hop",
+    "noise_applied": false,
+    "model": "anthropic-chat",
+    "database": "northwind",
+    "validated": true,
+    "result": [
+      {
+        "total_products": 1
+      }
+    ],
+    "answer": "Lonesome Pine Restaurant has ordered 1 unique product supplied by Exotic Liquids."
+  },
+  {
+    "question": "Tell me the company name of the supplier who provides Sasquatch Ale",
+    "cypher": "MATCH (s:Supplier)-[:SUPPLIES]->(p:Product {productName: 'Sasquatch Ale'}) RETURN s.companyName AS supplier_name",
+    "query_type": "Property Retrieval",
+    "complexity": "1-hop",
+    "noise_applied": false,
+    "model": "anthropic-chat",
+    "database": "northwind",
+    "validated": true,
+    "result": [
+      {
+        "supplier_name": "Bigfoot Breweries"
+      }
+    ],
+    "answer": "The supplier of Sasquatch Ale is Bigfoot Breweries."
+  },
+  {
+    "question": "What's the highest unit price among products ordered by White Clover Markets?",
+    "cypher": "MATCH (c:Customer {companyName: 'White Clover Markets'})-[:PURCHASED]->(o:Order)-[:ORDERS]->(p:Product) WHERE p.unitPrice IS NOT NULL RETURN MAX(p.unitPrice) AS highest_price",
+    "query_type": "Sorting",
+    "complexity": "2-hop",
+    "noise_applied": false,
+    "model": "anthropic-chat",
+    "database": "northwind",
+    "validated": true,
+    "result": [
+      {
+        "highest_price": 263.5
+      }
+    ],
+    "answer": "The highest unit price among products ordered by White Clover Markets is $263.50."
+  },
+  {
+    "question": "How many orders connect Alfreds Futterkiste to products in the Beverages category?",
+    "cypher": "MATCH (c:Customer {companyName: 'Alfreds Futterkiste'})-[:PURCHASED]->(o:Order)-[:ORDERS]->(p:Product)-[:PART_OF]->(cat:Category {categoryName: 'Beverages'}) RETURN COUNT(DISTINCT o) AS connection_count",
+    "query_type": "Existence Verification",
+    "complexity": "3-hop",
+    "noise_applied": false,
+    "model": "anthropic-chat",
+    "database": "northwind",
+    "validated": true,
+    "result": [
+      {
+        "connection_count": 2
+      }
+    ],
+    "answer": "Alfreds Futterkiste has 2 orders that connect to products in the Beverages category."
+  },
+  {
+    "question": "What's the average freight cost for orders containing Chai?",
+    "cypher": "MATCH (o:Order)-[:ORDERS]->(p:Product {productName: 'Chai'}) RETURN AVG(toFloat(o.freight)) AS average_freight",
+    "query_type": "Aggregation",
+    "complexity": "1-hop",
+    "noise_applied": false,
+    "model": "anthropic-chat",
+    "database": "northwind",
+    "validated": true,
+    "result": [
+      {
+        "average_freight": 87.1436842105263
+      }
+    ],
+    "answer": "The average freight cost for orders containing Chai is $87.14."
+  },
+  {
+    "question": "Which city does Ernst Handel operate from?",
+    "cypher": "MATCH (c:Customer {companyName: 'Ernst Handel'}) RETURN c.city AS customer_city",
+    "query_type": "Property Retrieval",
+    "complexity": "0-hop",
+    "noise_applied": false,
+    "model": "anthropic-chat",
+    "database": "northwind",
+    "validated": true,
+    "result": [
+      {
+        "customer_city": "Graz"
+      }
+    ],
+    "answer": "Ernst Handel operates from Graz."
+  },
+  {
+    "question": "What's the lowest reorder level among products supplied by companys in the UK?",
+    "cypher": "MATCH (s:Supplier {country: 'UK'})-[:SUPPLIES]->(p:Product) WHERE p.reorderLevel IS NOT NULL RETURN MIN(p.reorderLevel) AS lowest_reorder_level",
+    "query_type": "Sorting",
+    "complexity": "1-hop",
+    "noise_applied": true,
+    "noise_type": "typo",
+    "model": "anthropic-chat",
+    "database": "northwind",
+    "validated": true,
+    "result": [
+      {
+        "lowest_reorder_level": 10
+      }
+    ],
+    "answer": "The lowest reorder level among products supplied by companies in the UK is 10."
+  },
+  {
+    "question": "How many distinct suppliers provide products ordered by Simons bistro?",
+    "cypher": "MATCH (c:Customer {companyName: 'Simons bistro'})-[:PURCHASED]->(o:Order)-[:ORDERS]->(p:Product)<-[:SUPPLIES]-(s:Supplier) RETURN COUNT(DISTINCT s) AS supplier_count",
+    "query_type": "Aggregation",
+    "complexity": "3-hop",
+    "noise_applied": false,
+    "model": "anthropic-chat",
+    "database": "northwind",
+    "validated": true,
+    "result": [
+      {
+        "supplier_count": 13
+      }
+    ],
+    "answer": "13 distinct suppliers provide products ordered by Simons bistro."
+  },
+  {
+    "question": "What's the ship country for orders containing Teatime Chocolate Biscuits?",
+    "cypher": "MATCH (o:Order)-[:ORDERS]->(p:Product {productName: 'Teatime Chocolate Biscuits'}) RETURN o.shipCountry AS shipping_country LIMIT 1",
+    "query_type": "Property Retrieval",
+    "complexity": "1-hop",
+    "noise_applied": false,
+    "model": "anthropic-chat",
+    "database": "northwind",
+    "validated": true,
+    "result": [
+      {
+        "shipping_country": "Germany"
+      }
+    ],
+    "answer": "The ship country for an order containing Teatime Chocolate Biscuits is Germany."
+  },
+  {
+    "question": "Find me the highest quantity ordered for any product by White Clover Marketts",
+    "cypher": "MATCH (c:Customer {companyName: 'White Clover Markets'})-[:PURCHASED]->(o:Order)-[r:ORDERS]->(p:Product) WHERE r.quantity IS NOT NULL RETURN MAX(r.quantity) AS max_quantity",
+    "query_type": "Sorting",
+    "complexity": "2-hop",
+    "noise_applied": true,
+    "noise_type": "typo",
+    "model": "anthropic-chat",
+    "database": "northwind",
+    "validated": true,
+    "result": [
+      {
+        "max_quantity": 70
+      }
+    ],
+    "answer": "The highest quantity ordered by White Clover Markets for any single product is 70 units."
+  },
+  {
+    "question": "How many different categories contain products ordered by customers in the USA?",
+    "cypher": "MATCH (c:Customer {country: 'USA'})-[:PURCHASED]->(o:Order)-[:ORDERS]->(p:Product)-[:PART_OF]->(cat:Category) RETURN COUNT(DISTINCT cat) AS category_count",
+    "query_type": "Existence Verification",
+    "complexity": "3-hop",
+    "noise_applied": false,
+    "model": "anthropic-chat",
+    "database": "northwind",
+    "validated": true,
+    "result": [
+      {
+        "category_count": 8
+      }
+    ],
+    "answer": "8 different product categories contain products ordered by customers in the USA."
+  },
+  {
+    "question": "What's the total number of units in stock for all beverage items?",
+    "cypher": "MATCH (p:Product)-[:PART_OF]->(cat:Category {categoryName: 'Beverages'}) RETURN SUM(p.unitsInStock) AS total_units",
+    "query_type": "Aggregation",
+    "complexity": "1-hop",
+    "noise_applied": false,
+    "model": "anthropic-chat",
+    "database": "northwind",
+    "validated": true,
+    "result": [
+      {
+        "total_units": 559
+      }
+    ],
+    "answer": "The total number of units in stock for beverage items is 559."
+  },
+  {
+    "question": "Tell me what's the contact title of the person at Exotic Liqiuds",
+    "cypher": "MATCH (s:Supplier {companyName: 'Exotic Liquids'}) RETURN s.contactTitle AS contact_title",
+    "query_type": "Property Retrieval",
+    "complexity": "0-hop",
+    "noise_applied": true,
+    "noise_type": "typo",
+    "model": "anthropic-chat",
+    "database": "northwind",
+    "validated": true,
+    "result": [
+      {
+        "contact_title": "Purchasing Manager"
+      }
+    ],
+    "answer": "The contact title at Exotic Liquids is Purchasing Manager."
+  },
+  {
+    "question": "What's the minimum unit price among discontinued products?",
+    "cypher": "MATCH (p:Product {discontinued: true}) WHERE p.unitPrice IS NOT NULL RETURN MIN(p.unitPrice) AS lowest_price",
+    "query_type": "Sorting",
+    "complexity": "0-hop",
+    "noise_applied": false,
+    "model": "anthropic-chat",
+    "database": "northwind",
+    "validated": true,
+    "result": [
+      {
+        "lowest_price": 4.5
+      }
+    ],
+    "answer": "The minimum unit price among discontinued products is $4.50."
+  },
+  {
+    "question": "How many products link Lonesome Pine Restaurant to suppliers from London?",
+    "cypher": "MATCH (c:Customer {companyName: 'Lonesome Pine Restaurant'})-[:PURCHASED]->(o:Order)-[:ORDERS]->(p:Product)<-[:SUPPLIES]-(s:Supplier {city: 'London'}) RETURN COUNT(DISTINCT p) AS connecting_products",
+    "query_type": "Existence Verification",
+    "complexity": "3-hop",
+    "noise_applied": false,
+    "model": "anthropic-chat",
+    "database": "northwind",
+    "validated": true,
+    "result": [
+      {
+        "connecting_products": 1
+      }
+    ],
+    "answer": "1 product links Lonesome Pine Restaurant to suppliers from London."
+  },
+  {
+    "question": "What's the average units on order for stuff in the Beverages category?",
+    "cypher": "MATCH (p:Product)-[:PART_OF]->(cat:Category {categoryName: 'Beverages'}) RETURN AVG(p.unitsOnOrder) AS avg_units_on_order",
+    "query_type": "Aggregation",
+    "complexity": "1-hop",
+    "noise_applied": true,
+    "noise_type": "colloquialism",
+    "model": "anthropic-chat",
+    "database": "northwind",
+    "validated": true,
+    "result": [
+      {
+        "avg_units_on_order": 5.0
+      }
+    ],
+    "answer": "The average units on order for products in the Beverages category is 5.0."
+  },
+  {
+    "question": "Which postal code does the customer Alfreds Futterkiste use?",
+    "cypher": "MATCH (c:Customer {companyName: 'Alfreds Futterkiste'}) RETURN c.postalCode AS postal_code",
+    "query_type": "Property Retrieval",
+    "complexity": "0-hop",
+    "noise_applied": false,
+    "model": "anthropic-chat",
+    "database": "northwind",
+    "validated": true,
+    "result": [
+      {
+        "postal_code": "12209"
+      }
+    ],
+    "answer": "The postal code for Alfreds Futterkiste is 12209."
+  },
+  {
+    "question": "Find the peak freight cost among orders shipped to Germany",
+    "cypher": "MATCH (o:Order {shipCountry: 'Germany'}) WHERE o.freight IS NOT NULL RETURN MAX(toFloat(o.freight)) AS highest_freight",
+    "query_type": "Sorting",
+    "complexity": "0-hop",
+    "noise_applied": false,
+    "model": "anthropic-chat",
+    "database": "northwind",
+    "validated": true,
+    "result": [
+      {
+        "highest_freight": 1007.64
+      }
+    ],
+    "answer": "The peak freight cost for orders shipped to Germany is $1,007.64."
+  },
+  {
+    "question": "How many suppliers connect to customers through orders placed in 1998?",
+    "cypher": "MATCH (s:Supplier)-[:SUPPLIES]->(p:Product)<-[:ORDERS]-(o:Order)<-[:PURCHASED]-(c:Customer) WHERE o.orderDate STARTS WITH '1998' RETURN COUNT(DISTINCT s) AS supplier_count",
+    "query_type": "Existence Verification",
+    "complexity": "3-hop",
+    "noise_applied": false,
+    "model": "anthropic-chat",
+    "database": "northwind",
+    "validated": true,
+    "result": [
+      {
+        "supplier_count": 29
+      }
+    ],
+    "answer": "29 suppliers connected to customers through orders placed in 1998."
+  },
+  {
+    "question": "Whats the description of the category that contains Sasquatch Ale?",
+    "cypher": "MATCH (p:Product {productName: 'Sasquatch Ale'})-[:PART_OF]->(cat:Category) RETURN cat.description AS category_description",
+    "query_type": "Property Retrieval",
+    "complexity": "1-hop",
+    "noise_applied": true,
+    "noise_type": "typo",
+    "model": "anthropic-chat",
+    "database": "northwind",
+    "validated": true,
+    "result": [
+      {
+        "category_description": "Soft drinks, coffees, teas, beers, and ales"
+      }
+    ],
+    "answer": "The category containing Sasquatch Ale has the description: \"Soft drinks, coffees, teas, beers, and ales\""
+  },
+  {
+    "question": "Tell me the smallest discount percentage given on any order",
+    "cypher": "MATCH (o:Order)-[r:ORDERS]->(p:Product) WHERE r.discount IS NOT NULL AND r.discount <> '0' RETURN MIN(toFloat(r.discount)) AS minimum_discount",
+    "query_type": "Sorting",
+    "complexity": "1-hop",
+    "noise_applied": false,
+    "model": "anthropic-chat",
+    "database": "northwind",
+    "validated": true,
+    "result": [
+      {
+        "minimum_discount": 0.01
+      }
+    ],
+    "answer": "The smallest discount percentage given on any order is 0.01 (1%)."
+  },
+  {
+    "question": "How many distinct products connect Ernst Handel to Exotic Liquids through their supply chain?",
+    "cypher": "MATCH (c:Customer {companyName: 'Ernst Handel'})-[:PURCHASED]->(o:Order)-[:ORDERS]->(p:Product)<-[:SUPPLIES]-(s:Supplier {companyName: 'Exotic Liquids'}) RETURN COUNT(DISTINCT p) AS connection_count",
+    "query_type": "Existence Verification",
+    "complexity": "3-hop",
+    "noise_applied": false,
+    "model": "anthropic-chat",
+    "database": "northwind",
+    "validated": true,
+    "result": [
+      {
+        "connection_count": 2
+      }
+    ],
+    "answer": "Based on the query result, 2 distinct products connect Ernst Handel to Exotic Liquids through their supply chain."
+  },
+  {
+    "question": "What's the sum of all quantities ordered by folks in Denmark?",
+    "cypher": "MATCH (c:Customer {country: 'Denmark'})-[:PURCHASED]->(o:Order)-[r:ORDERS]->(p:Product) RETURN SUM(r.quantity) AS total_quantity",
+    "query_type": "Aggregation",
+    "complexity": "2-hop",
+    "noise_applied": true,
+    "noise_type": "colloquialism",
+    "model": "anthropic-chat",
+    "database": "northwind",
+    "validated": true,
+    "result": [
+      {
+        "total_quantity": 1170
+      }
+    ],
+    "answer": "The total quantity of products ordered by customers in Denmark is 1,170."
+  },
+  {
+    "question": "How many orders were shipped to cities starting with 'S'?",
+    "cypher": "MATCH (o:Order) WHERE o.shipCity STARTS WITH 'S' RETURN COUNT(o) AS order_count",
+    "query_type": "Existence Verification",
+    "complexity": "0-hop",
+    "noise_applied": false,
+    "model": "anthropic-chat",
+    "database": "northwind",
+    "validated": true,
+    "result": [
+      {
+        "order_count": 62
+      }
+    ],
+    "answer": "62 orders were shipped to cities starting with the letter 'S'."
+  },
+  {
+    "question": "What's the accession number of protein P38117-2?",
+    "cypher": "MATCH (p:Protein {id: 'P38117-2'}) RETURN p.accession AS protein_accession",
+    "query_type": "Direct Property Access",
+    "complexity": "0-hop",
+    "noise_applied": false,
+    "model": "anthropic-chat",
+    "database": "ClinicalKnowledgeGraph",
+    "validated": true,
+    "result": [
+      {
+        "protein_accession": "ETFB_HUMAN"
+      }
+    ],
+    "answer": "The accession number of protein P38117-2 is ETFB_HUMAN."
+  },
+  {
+    "question": "What's the name of the ETFB gene?",
+    "cypher": "MATCH (g:Gene {id: 'ETFB'}) RETURN g.name AS gene_name",
+    "query_type": "Direct Property Access",
+    "complexity": "0-hop",
+    "noise_applied": false,
+    "model": "anthropic-chat",
+    "database": "ClinicalKnowledgeGraph",
+    "validated": true,
+    "result": [
+      {
+        "gene_name": "electron transfer flavoprotein subunit beta"
+      }
+    ],
+    "answer": "The name of the ETFB gene is \"electron transfer flavoprotein subunit beta\"."
+  },
+  {
+    "question": "Tell me the position of the modified protein P38117-2_M172-ox",
+    "cypher": "MATCH (mp:Modified_protein {id: 'P38117-2_M172-ox'}) RETURN mp.position AS modification_position",
+    "query_type": "Direct Property Access",
+    "complexity": "0-hop",
+    "noise_applied": false,
+    "model": "anthropic-chat",
+    "database": "ClinicalKnowledgeGraph",
+    "validated": true,
+    "result": [
+      {
+        "modification_position": "172"
+      }
+    ],
+    "answer": "The modified protein P38117-2_M172-ox is located at position 172."
+  },
+  {
+    "question": "What's the taxid for the MPG gene?",
+    "cypher": "MATCH (g:Gene {id: 'MPG'}) RETURN g.taxid AS gene_taxid",
+    "query_type": "Direct Property Access",
+    "complexity": "0-hop",
+    "noise_applied": false,
+    "model": "anthropic-chat",
+    "database": "ClinicalKnowledgeGraph",
+    "validated": true,
+    "result": [
+      {
+        "gene_taxid": "9606"
+      }
+    ],
+    "answer": "The taxid for the MPG gene is 9606."
+  },
+  {
+    "question": "What is the effect of variant chr19:g.51354221C>A?",
+    "cypher": "MATCH (v:Known_variant {id: 'chr19:g.51354221C>A'}) RETURN v.effect AS variant_effect",
+    "query_type": "Direct Property Access",
+    "complexity": "0-hop",
+    "noise_applied": false,
+    "model": "anthropic-chat",
+    "database": "ClinicalKnowledgeGraph",
+    "validated": true,
+    "result": [
+      {
+        "variant_effect": "missense variant"
+      }
+    ],
+    "answer": "The variant chr19:g.51354221C>A has an effect of missense variant, which typically means it results in a change of a single amino acid in the protein sequence."
+  },
+  {
+    "question": "What's Alberto Santos' email address?",
+    "cypher": "MATCH (u:User {name: 'Alberto Santos'}) RETURN u.email AS user_email",
+    "query_type": "Direct Property Access",
+    "complexity": "0-hop",
+    "noise_applied": false,
+    "model": "anthropic-chat",
+    "database": "ClinicalKnowledgeGraph",
+    "validated": true,
+    "result": [
+      {
+        "user_email": "alberto.santos@cpr.ku.dk"
+      }
+    ],
+    "answer": "Alberto Santos' email address is alberto.santos@cpr.ku.dk."
+  },
+  {
+    "question": "What's the descripshun of the heterotroph tissue?",
+    "cypher": "MATCH (t:Tissue {name: 'heterotroph'}) RETURN t.description AS tissue_description",
+    "query_type": "Direct Property Access",
+    "complexity": "0-hop",
+    "noise_applied": true,
+    "noise_type": "typo",
+    "model": "anthropic-chat",
+    "database": "ClinicalKnowledgeGraph",
+    "validated": true,
+    "result": [
+      {
+        "tissue_description": "A heterotrophic organism. [Dorlands_Medical_Dictionary:MerckSource]"
+      }
+    ],
+    "answer": "A heterotroph tissue is defined as \"A heterotrophic organism\" according to Dorlands Medical Dictionary and MerckSource."
+  },
+  {
+    "question": "What's the link for protein structure 6GLR?",
+    "cypher": "MATCH (ps:Protein_structure {id: '6GLR'}) RETURN ps.link AS structure_link",
+    "query_type": "Direct Property Access",
+    "complexity": "0-hop",
+    "noise_applied": false,
+    "model": "anthropic-chat",
+    "database": "ClinicalKnowledgeGraph",
+    "validated": true,
+    "result": [
+      {
+        "structure_link": "http://www.rcsb.org/structure/6GLR"
+      }
+    ],
+    "answer": "The link for protein structure 6GLR is http://www.rcsb.org/structure/6GLR."
+  },
+  {
+    "question": "How many transcripts does the ETFB gene have?",
+    "cypher": "MATCH (g:Gene {id: 'ETFB'})-[:TRANSCRIBED_INTO]->(t:Transcript) RETURN COUNT(t) AS transcript_count",
+    "query_type": "Single-hop Aggregation",
+    "complexity": "1-hop",
+    "noise_applied": false,
+    "model": "anthropic-chat",
+    "database": "ClinicalKnowledgeGraph",
+    "validated": true,
+    "result": [
+      {
+        "transcript_count": 6
+      }
+    ],
+    "answer": "The ETFB gene has 6 transcripts."
+  },
+  {
+    "question": "Which gene is variant chr7:g.2249926C>A found in?",
+    "cypher": "MATCH (v:Known_variant {id: 'chr7:g.2249926C>A'})-[:VARIANT_FOUND_IN_GENE]->(g:Gene) RETURN g.id AS gene_id",
+    "query_type": "Single-hop Property Retrieval",
+    "complexity": "1-hop",
+    "noise_applied": false,
+    "model": "anthropic-chat",
+    "database": "ClinicalKnowledgeGraph",
+    "validated": true,
+    "result": [
+      {
+        "gene_id": "NUDT1"
+      }
+    ],
+    "answer": "The gene variant chr7:g.2249926C>A is found in the NUDT1 gene."
+  },
+  {
+    "question": "How many peptides belong to protien P29372-5?",
+    "cypher": "MATCH (pep:Peptide)-[:BELONGS_TO_PROTEIN]->(p:Protein {id: 'P29372-5'}) RETURN COUNT(pep) AS peptide_count",
+    "query_type": "Single-hop Aggregation",
+    "complexity": "1-hop",
+    "noise_applied": true,
+    "noise_type": "typo",
+    "model": "anthropic-chat",
+    "database": "ClinicalKnowledgeGraph",
+    "validated": true,
+    "result": [
+      {
+        "peptide_count": 28
+      }
+    ],
+    "answer": "28 peptides belong to protein P29372-5."
+  },
+  {
+    "question": "What modification type does P38117-2_M172-ox have?",
+    "cypher": "MATCH (mp:Modified_protein {id: 'P38117-2_M172-ox'})-[:HAS_MODIFICATION]->(m:Modification) RETURN m.id AS modification_id",
+    "query_type": "Single-hop Property Retrieval",
+    "complexity": "1-hop",
+    "noise_applied": false,
+    "model": "anthropic-chat",
+    "database": "ClinicalKnowledgeGraph",
+    "validated": true,
+    "result": [
+      {
+        "modification_id": "MOD:00256"
+      }
+    ],
+    "answer": "The modification type for P38117-2_M172-ox is MOD:00256."
+  },
+  {
+    "question": "Tell me how many projects Alberto Santos is responsible for",
+    "cypher": "MATCH (u:User {name: 'Alberto Santos'})-[:IS_RESPONSIBLE]->(p:Project) RETURN COUNT(p) AS project_count",
+    "query_type": "Single-hop Aggregation",
+    "complexity": "1-hop",
+    "noise_applied": false,
+    "model": "anthropic-chat",
+    "database": "ClinicalKnowledgeGraph",
+    "validated": true,
+    "result": [
+      {
+        "project_count": 4
+      }
+    ],
+    "answer": "Alberto Santos is responsible for 4 projects."
+  },
+  {
+    "question": "What's the parent modification of MOD:01514?",
+    "cypher": "MATCH (m:Modification {id: 'MOD:01514'})-[:HAS_PARENT]->(parent:Modification) RETURN parent.id AS parent_modification_id",
+    "query_type": "Single-hop Property Retrieval",
+    "complexity": "1-hop",
+    "noise_applied": false,
+    "model": "anthropic-chat",
+    "database": "ClinicalKnowledgeGraph",
+    "validated": true,
+    "result": [
+      {
+        "parent_modification_id": "MOD:01513"
+      }
+    ],
+    "answer": "The parent modification of MOD:01514 is MOD:01513."
+  },
+  {
+    "question": "How many folks participate in project P0000005?",
+    "cypher": "MATCH (u:User)-[:PARTICIPATES_IN]->(p:Project {id: 'P0000005'}) RETURN COUNT(u) AS participant_count",
+    "query_type": "Single-hop Aggregation",
+    "complexity": "1-hop",
+    "noise_applied": true,
+    "noise_type": "colloquialism",
+    "model": "anthropic-chat",
+    "database": "ClinicalKnowledgeGraph",
+    "validated": true,
+    "result": [
+      {
+        "participant_count": 1
+      }
+    ],
+    "answer": "1 person participates in project P0000005."
+  },
+  {
+    "question": "Which disease is studied in Alberto Santo's phosphoproteomics project?",
+    "cypher": "MATCH (u:User {name: 'Alberto Santos'})-[:IS_RESPONSIBLE]->(pr:Project)-[:STUDIES_DISEASE]->(d:Disease) WHERE pr.name CONTAINS 'Phosphoproteomics' RETURN d.name AS disease_name",
+    "query_type": "Two-hop Property Retrieval",
+    "complexity": "2-hop",
+    "noise_applied": true,
+    "noise_type": "typo",
+    "model": "anthropic-chat",
+    "database": "ClinicalKnowledgeGraph",
+    "validated": true,
+    "result": [
+      {
+        "disease_name": "ovarian serous carcinoma"
+      }
+    ],
+    "answer": "Based on the query result, Alberto Santos' phosphoproteomics project studies ovarian serous carcinoma."
+  },
+  {
+    "question": "How many modification levels are above MOD:01516?",
+    "cypher": "MATCH (m:Modification {id: 'MOD:01516'})-[:HAS_PARENT*1..2]->(parent:Modification) RETURN COUNT(DISTINCT parent) AS parent_count",
+    "query_type": "Two-hop Aggregation",
+    "complexity": "2-hop",
+    "noise_applied": false,
+    "model": "anthropic-chat",
+    "database": "ClinicalKnowledgeGraph",
+    "validated": true,
+    "result": [
+      {
+        "parent_count": 2
+      }
+    ],
+    "answer": "There are 2 modification levels above MOD:01516."
+  },
+  {
+    "question": "Which projects does Ana Rita Colaco participate in that study ovarian cancer?",
+    "cypher": "MATCH (u:User {name: 'Ana Rita Cola\u00e7o'})-[:PARTICIPATES_IN]->(p:Project)-[:STUDIES_DISEASE]->(d:Disease) WHERE d.name CONTAINS 'ovarian' RETURN COUNT(p) AS project_count",
+    "query_type": "Two-hop Aggregation",
+    "complexity": "2-hop",
+    "noise_applied": true,
+    "noise_type": "typo",
+    "model": "anthropic-chat",
+    "database": "ClinicalKnowledgeGraph",
+    "validated": true,
+    "result": [
+      {
+        "project_count": 4
+      }
+    ],
+    "answer": "Based on the query result, Ana Rita Colaco participates in 4 projects that study ovarian cancer."
+  },
+  {
+    "question": "What tissue type is at the top of the fungus hierarchy?",
+    "cypher": "MATCH (t:Tissue {name: 'fungus'})-[:HAS_PARENT*1..2]->(parent:Tissue) WHERE NOT (parent)-[:HAS_PARENT]->() RETURN parent.name AS top_tissue_name",
+    "query_type": "Two-hop Property Retrieval",
+    "complexity": "2-hop",
+    "noise_applied": false,
+    "model": "anthropic-chat",
+    "database": "ClinicalKnowledgeGraph",
+    "validated": true,
+    "result": [
+      {
+        "top_tissue_name": "tissues, cell types and enzyme sources"
+      }
+    ],
+    "answer": "Based on the query result, the tissue type at the top of the fungus hierarchy is \"tissues, cell types and enzyme sources\"."
+  },
+  {
+    "question": "How many proteins have structures deposited in the database?",
+    "cypher": "MATCH (p:Protein)-[:HAS_STRUCTURE]->(ps:Protein_structure) RETURN COUNT(DISTINCT p) AS protein_with_structure_count",
+    "query_type": "Single-hop Aggregation",
+    "complexity": "1-hop",
+    "noise_applied": false,
+    "model": "anthropic-chat",
+    "database": "ClinicalKnowledgeGraph",
+    "validated": true,
+    "result": [
+      {
+        "protein_with_structure_count": 17553
+      }
+    ],
+    "answer": "17,553 proteins have structures deposited in the database."
+  },
+  {
+    "question": "How many proteins are associated with cellular components that are linked to the CHGA gene through its transcripts?",
+    "cypher": "MATCH (g:Gene {name: 'CHGA'})-[:TRANSCRIBED_INTO]->(t:Transcript)-[:TRANSLATED_INTO]->(p:Protein)-[:ASSOCIATED_WITH]->(cc:Cellular_component) RETURN COUNT(DISTINCT p) AS protein_count",
+    "query_type": "Aggregation",
+    "complexity": "3-hop",
+    "noise_applied": false,
+    "model": "anthropic-chat",
+    "database": "ClinicalKnowledgeGraph",
+    "validated": true,
+    "result": [
+      {
+        "protein_count": 0
+      }
+    ],
+    "answer": "Based on the query result, 0 proteins are associated with cellular components that are linked to the CHGA gene through its transcripts."
+  },
+  {
+    "question": "How many distinct biological processes are associated with complexes that include the NTF3 protein?",
+    "cypher": "MATCH (p:Protein {name: 'NTF3'})-[:IS_SUBUNIT_OF]->(c:Complex)-[:ASSOCIATED_WITH]->(bp:Biological_process) RETURN COUNT(DISTINCT bp) AS process_count",
+    "query_type": "Aggregation",
+    "complexity": "2-hop",
+    "noise_applied": false,
+    "model": "anthropic-chat",
+    "database": "ClinicalKnowledgeGraph",
+    "validated": true,
+    "result": [
+      {
+        "process_count": 4
+      }
+    ],
+    "answer": "Based on the query result, 4 distinct biological processes are associated with complexes that include the NTF3 protein."
+  },
+  {
+    "question": "Tell me the name of the modification that's the parent of modifications with monoisotopic mass differences nominally equal at a resolution below 0.01 Da",
+    "cypher": "MATCH (m1:Modification {name: 'modifications with monoisotopic mass differences that are nominally equal at a resolution below 0.01 Da'})-[:HAS_PARENT]->(m2:Modification) RETURN m2.name AS parent_modification_name",
+    "query_type": "Property Retrieval",
+    "complexity": "1-hop",
+    "noise_applied": false,
+    "model": "anthropic-chat",
+    "database": "ClinicalKnowledgeGraph",
+    "validated": true,
+    "result": [
+      {
+        "parent_modification_name": "modifications with monoisotopic mass differences that are nominally equal at a resolution below 0.1 Da"
+      }
+    ],
+    "answer": "The parent modification is \"modifications with monoisotopic mass differences that are nominally equal at a resolution below 0.1 Da\"."
+  },
+  {
+    "question": "How many proteins connect to the phosphopyruvate hydratase complex through known variants found in genes?",
+    "cypher": "MATCH (kv:Known_variant)-[:VARIANT_FOUND_IN_GENE]->(g:Gene)-[:TRANSLATED_INTO]->(p:Protein)-[:ASSOCIATED_WITH]->(cc:Cellular_component {name: 'phosphopyruvate hydratase complex'}) RETURN COUNT(DISTINCT p) AS connecting_proteins",
+    "query_type": "Existence Verification",
+    "complexity": "3-hop",
+    "noise_applied": false,
+    "model": "anthropic-chat",
+    "database": "ClinicalKnowledgeGraph",
+    "validated": true,
+    "result": [
+      {
+        "connecting_proteins": 168
+      }
+    ],
+    "answer": "168 proteins connect to the phosphopyruvate hydratase complex through known variants found in genes."
+  },
+  {
+    "question": "Among all the gene products that have peptides, what's the lowest score for their association with biological processes?",
+    "cypher": "MATCH (pep:Peptide)-[:BELONGS_TO_PROTEIN]->(prot:Protein)-[a:ASSOCIATED_WITH]->(bp:Biological_process) WHERE a.score IS NOT NULL RETURN MIN(a.score) AS minimum_association_score",
+    "query_type": "Sorting",
+    "complexity": "2-hop",
+    "noise_applied": true,
+    "noise_type": "colloquialism",
+    "model": "anthropic-chat",
+    "database": "ClinicalKnowledgeGraph",
+    "validated": true,
+    "result": [
+      {
+        "minimum_association_score": 5.0
+      }
+    ],
+    "answer": "The lowest score for gene product associations with biological processes is 5.0."
+  },
+  {
+    "question": "How many publications mention functional regions that are found in the SPIRE1 protein?",
+    "cypher": "MATCH (p:Protein {name: 'SPIRE1'})<-[:FOUND_IN_PROTEIN]-(fr:Functional_region)-[:MENTIONED_IN_PUBLICATION]->(pub:Publication) RETURN COUNT(DISTINCT pub) AS publication_count",
+    "query_type": "Aggregation",
+    "complexity": "2-hop",
+    "noise_applied": false,
+    "model": "anthropic-chat",
+    "database": "ClinicalKnowledgeGraph",
+    "validated": true,
+    "result": [
+      {
+        "publication_count": 2
+      }
+    ],
+    "answer": "2 publications mention functional regions found in the SPIRE1 protein."
+  },
+  {
+    "question": "What's the shortest path length between the CT45 project and any user named Ana Rita Colaco?",
+    "cypher": "MATCH path = shortestPath((proj:Project {acronym: 'CT45'})-[*]-(u:User {name: 'Ana Rita Cola\u00e7o'})) RETURN LENGTH(path) AS shortest_distance",
+    "query_type": "Existence Verification",
+    "complexity": "2-hop",
+    "noise_applied": true,
+    "noise_type": "typo",
+    "model": "anthropic-chat",
+    "database": "ClinicalKnowledgeGraph",
+    "validated": true,
+    "result": [
+      {
+        "shortest_distance": 1
+      }
+    ],
+    "answer": "The shortest path length between the CT45 project and Ana Rita Colaco is 1, indicating they are directly connected in the network."
+  },
+  {
+    "question": "How many distinct protein structures are linked to proteins that have variants in the NUDT1 gene?",
+    "cypher": "MATCH (kv:Known_variant)-[:VARIANT_FOUND_IN_GENE]->(g:Gene {name: 'NUDT1'})-[:TRANSLATED_INTO]->(p:Protein)-[:HAS_STRUCTURE]->(ps:Protein_structure) RETURN COUNT(DISTINCT ps) AS structure_count",
+    "query_type": "Aggregation",
+    "complexity": "3-hop",
+    "noise_applied": false,
+    "model": "anthropic-chat",
+    "database": "ClinicalKnowledgeGraph",
+    "validated": true,
+    "result": [
+      {
+        "structure_count": 0
+      }
+    ],
+    "answer": "0 distinct protein structures are linked to proteins that have variants in the NUDT1 gene."
+  },
+  {
+    "question": "Find the peak imdbRating... I mean, what's the maximum year of publications that studied traits related to cleft lip?",
+    "cypher": "MATCH (ef:Experimental_factor {name: 'cleft lip'})<-[:STUDIES_TRAIT]-(gs:GWAS_study)-[:PUBLISHED_IN]->(pub:Publication) WHERE pub.year IS NOT NULL RETURN MAX(pub.year) AS latest_publication_year",
+    "query_type": "Sorting",
+    "complexity": "2-hop",
+    "noise_applied": true,
+    "noise_type": "colloquialism",
+    "model": "anthropic-chat",
+    "database": "ClinicalKnowledgeGraph",
+    "validated": true,
+    "result": [
+      {
+        "latest_publication_year": 2018
+      }
+    ],
+    "answer": "The maximum year of publications studying traits related to cleft lip is 2018."
+  },
+  {
+    "question": "How many folks participate in projects that follow up the CT45 project?",
+    "cypher": "MATCH (p1:Project {acronym: 'CT45'})<-[:FOLLOWS_UP_PROJECT]-(p2:Project)<-[:PARTICIPATES_IN]-(u:User) RETURN COUNT(DISTINCT u) AS participant_count",
+    "query_type": "Aggregation",
+    "complexity": "2-hop",
+    "noise_applied": true,
+    "noise_type": "colloquialism",
+    "model": "anthropic-chat",
+    "database": "ClinicalKnowledgeGraph",
+    "validated": true,
+    "result": [
+      {
+        "participant_count": 1
+      }
+    ],
+    "answer": "1 person participates in projects that follow up the CT45 project."
+  },
+  {
+    "question": "What's the effect of the known variant with ID chr12:g.5494795G>A?",
+    "cypher": "MATCH (v:Known_variant {id: 'chr12:g.5494795G>A'}) RETURN v.effect AS variant_effect",
+    "query_type": "Property Retrieval",
+    "complexity": "0-hop",
+    "noise_applied": false,
+    "model": "anthropic-chat",
+    "database": "ClinicalKnowledgeGraph",
+    "validated": true,
+    "result": [
+      {
+        "variant_effect": "missense variant"
+      }
+    ],
+    "answer": "The variant chr12:g.5494795G>A is a missense variant, which means it causes a change in the amino acid sequence of the protein."
+  },
+  {
+    "question": "How many biological processes connect through the E-box sequence-binding complex to other complexes?",
+    "cypher": "MATCH (c1:Complex {name: 'E-box sequence-binding complex'})-[:ASSOCIATED_WITH]->(bp:Biological_process)<-[:ASSOCIATED_WITH]-(c2:Complex) WHERE c1 <> c2 RETURN COUNT(DISTINCT bp) AS connecting_processes",
+    "query_type": "Existence Verification",
+    "complexity": "2-hop",
+    "noise_applied": false,
+    "model": "anthropic-chat",
+    "database": "ClinicalKnowledgeGraph",
+    "validated": true,
+    "result": [
+      {
+        "connecting_processes": 4
+      }
+    ],
+    "answer": "4 biological processes connect through the E-box sequence-binding complex to other complexes."
+  },
+  {
+    "question": "What's the source of the amino acid sequence with ID A0A024R1R8?",
+    "cypher": "MATCH (aas:Amino_acid_sequence {id: 'A0A024R1R8'}) RETURN aas.source AS sequence_source",
+    "query_type": "Property Retrieval",
+    "complexity": "0-hop",
+    "noise_applied": false,
+    "model": "anthropic-chat",
+    "database": "ClinicalKnowledgeGraph",
+    "validated": true,
+    "result": [
+      {
+        "sequence_source": "UniProt"
+      }
+    ],
+    "answer": "The source of the amino acid sequence with ID A0A024R1R8 is UniProt."
+  },
+  {
+    "question": "Among proteins that interact with zinc ion transmembrane transporter activity, what's the highest number of associated peptides?",
+    "cypher": "MATCH (mf:Molecular_function {name: 'zinc ion transmembrane transporter activity'})<-[:ASSOCIATED_WITH]-(p:Protein)<-[:BELONGS_TO_PROTEIN]-(pep:Peptide) WITH p, COUNT(DISTINCT pep) AS peptide_count RETURN MAX(peptide_count) AS max_peptide_count",
+    "query_type": "Sorting",
+    "complexity": "2-hop",
+    "noise_applied": false,
+    "model": "anthropic-chat",
+    "database": "ClinicalKnowledgeGraph",
+    "validated": true,
+    "result": [
+      {
+        "max_peptide_count": 68
+      }
+    ],
+    "answer": "The highest number of associated peptides for proteins with zinc ion transmembrane transporter activity is 68."
+  },
+  {
+    "question": "What's the organim of the Neurotrophin-3-p75 complex?",
+    "cypher": "MATCH (c:Complex {name: 'Neurotrophin-3-p75 complex'}) RETURN c.organism AS complex_organism",
+    "query_type": "Property Retrieval",
+    "complexity": "0-hop",
+    "noise_applied": true,
+    "noise_type": "typo",
+    "model": "anthropic-chat",
+    "database": "ClinicalKnowledgeGraph",
+    "validated": true,
+    "result": [
+      {
+        "complex_organism": "9606"
+      }
+    ],
+    "answer": "The organism of the Neurotrophin-3-p75 complex is 9606, which corresponds to Homo sapiens (human)."
+  },
+  {
+    "question": "How many peptides belong to proteins that have the lowest association score with ovarian angiosarcoma?",
+    "cypher": "MATCH (d:Disease {name: 'ovarian angiosarcoma'})<-[a:ASSOCIATED_WITH]-(p:Protein)<-[:BELONGS_TO_PROTEIN]-(pep:Peptide) WHERE a.score IS NOT NULL WITH MIN(a.score) AS min_score MATCH (d:Disease {name: 'ovarian angiosarcoma'})<-[a2:ASSOCIATED_WITH]-(p2:Protein)<-[:BELONGS_TO_PROTEIN]-(pep2:Peptide) WHERE a2.score = min_score RETURN COUNT(DISTINCT pep2) AS peptide_count",
+    "query_type": "Sorting",
+    "complexity": "2-hop",
+    "noise_applied": false,
+    "model": "anthropic-chat",
+    "database": "ClinicalKnowledgeGraph",
+    "validated": true,
+    "result": [
+      {
+        "peptide_count": 29
+      }
+    ],
+    "answer": "29 peptides belong to proteins with the lowest association score with ovarian angiosarcoma."
+  },
+  {
+    "question": "How many distinct diseases can be reached from proteins that are quality control markers in tissues?",
+    "cypher": "MATCH (p:Protein)-[:IS_QCMARKER_IN_TISSUE]->(t:Tissue), (p)-[:ASSOCIATED_WITH]->(d:Disease) RETURN COUNT(DISTINCT d) AS disease_count",
+    "query_type": "Existence Verification",
+    "complexity": "2-hop",
+    "noise_applied": false,
+    "model": "anthropic-chat",
+    "database": "ClinicalKnowledgeGraph",
+    "validated": true,
+    "result": [
+      {
+        "disease_count": 3281
+      }
+    ],
+    "answer": "Based on the query result, there are 3,281 distinct diseases that can be reached from proteins that are quality control markers in tissues."
+  },
+  {
+    "question": "What's the taxid of the gene that gets transcribed into the chromogranin-A isoform 2 preproprotein?",
+    "cypher": "MATCH (g:Gene)-[:TRANSCRIBED_INTO]->(t:Transcript {name: 'chromogranin-A isoform 2 preproprotein'}) RETURN g.taxid AS gene_taxid",
+    "query_type": "Property Retrieval",
+    "complexity": "1-hop",
+    "noise_applied": false,
+    "model": "anthropic-chat",
+    "database": "ClinicalKnowledgeGraph",
+    "validated": true,
+    "result": [
+      {
+        "gene_taxid": "9606"
+      }
+    ],
+    "answer": "The taxid of the gene that gets transcribed into the chromogranin-A isoform 2 preproprotein is 9606, which corresponds to the human species."
+  },
+  {
+    "question": "How many modified protein sites can the ATCAY protein reach through biological procesess?",
+    "cypher": "MATCH (p:Protein {name: 'ATCAY'})-[:ASSOCIATED_WITH]->(bp:Biological_process)<-[:ASSOCIATED_WITH]-(p2:Protein)-[:HAS_MODIFIED_SITE]->(mp:Modified_protein) RETURN COUNT(DISTINCT mp) AS modified_site_count",
+    "query_type": "Existence Verification",
+    "complexity": "3-hop",
+    "noise_applied": true,
+    "noise_type": "typo",
+    "model": "anthropic-chat",
+    "database": "ClinicalKnowledgeGraph",
+    "validated": true,
+    "result": [
+      {
+        "modified_site_count": 581
+      }
+    ],
+    "answer": "Through its associated biological processes, the ATCAY protein can reach 581 distinct modified protein sites."
+  },
+  {
+    "question": "What's the total number of somatic mutations that can be linked to known variants?",
+    "cypher": "MATCH (sm:Somatic_mutation)-[:IS_A_KNOWN_VARIANT]->(kv:Known_variant) RETURN COUNT(DISTINCT sm) AS somatic_mutation_count",
+    "query_type": "Aggregation",
+    "complexity": "1-hop",
+    "noise_applied": false,
+    "model": "anthropic-chat",
+    "database": "ClinicalKnowledgeGraph",
+    "validated": true,
+    "result": [
+      {
+        "somatic_mutation_count": 29
+      }
+    ],
+    "answer": "Based on the query result, there are 29 distinct somatic mutations that can be linked to known variants."
+  }
+]
